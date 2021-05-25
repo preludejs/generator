@@ -4,11 +4,12 @@
     "importsNotUsedAsValues": "error",
     "inlineSourceMap": true,
     "inlineSources": true,
+    "module": "ES2020",
+    "moduleResolution": "Node",
     "noImplicitAny": false,
     "noImplicitReturns": true,
     "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "resolveJsonModule": true
+    "noUnusedParameters": true
   },
   "include": [
     "**/*.ts"

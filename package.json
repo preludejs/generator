@@ -2,12 +2,14 @@
   "name": "@prelude/generator",
   "version": "0.0.2",
   "description": "Generator module.",
+  "type": "module",
   "main": "index.js",
   "directories": {
-    "test": "test"
+    "test": "test",
+    "update": "npx npm-check --update --save-exact"
   },
   "scripts": {
-    "test": "tsc && jest"
+    "test": "tsc && NODE_OPTIONS=--experimental-vm-modules jest"
   },
   "keywords": [
     "prelude",
@@ -29,6 +31,6 @@
     "typescript": "4.2.4"
   },
   "dependencies": {
-    "@prelude/cmp": "0.0.2"
+    "@prelude/cmp": "0.1.0"
   }
 }
