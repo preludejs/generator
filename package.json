@@ -5,11 +5,11 @@
   "type": "module",
   "main": "index.js",
   "directories": {
-    "test": "test",
-    "update": "npx npm-check --update --save-exact"
+    "test": "test"
   },
   "scripts": {
-    "test": "tsc && NODE_OPTIONS=--experimental-vm-modules jest"
+    "test": "tsc && NODE_OPTIONS=--experimental-vm-modules jest",
+    "update": "npx npm-check --update --save-exact"
   },
   "keywords": [
     "prelude",
@@ -31,6 +31,6 @@
     "typescript": "4.2.4"
   },
   "dependencies": {
-    "@prelude/cmp": "0.1.0"
+    "@prelude/cmp": "0.1.1"
   }
 }
