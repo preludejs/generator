@@ -1,6 +1,6 @@
 {
   "name": "@prelude/generator",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Generator module.",
   "main": "index.js",
   "directories": {
@@ -9,7 +9,16 @@
   "scripts": {
     "test": "tsc && jest"
   },
-  "keywords": [ "prelude", "std", "lib", "stdlib", "library", "generators", "functional", "combinators" ],
+  "keywords": [
+    "prelude",
+    "std",
+    "lib",
+    "stdlib",
+    "library",
+    "generators",
+    "functional",
+    "combinators"
+  ],
   "author": "Mirek Rusin (https://github.com/mirek)",
   "license": "MIT",
   "devDependencies": {
