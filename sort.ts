@@ -1,4 +1,4 @@
-import type { Cmp } from './cmp'
+import type { Cmp } from './cmp.js'
 
 const sort =
   function *<T>(cmp: Cmp<T>, ...gs: Iterable<T>[]): Generator<T> {

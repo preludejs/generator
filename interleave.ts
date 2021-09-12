@@ -1,4 +1,4 @@
-import type GeneratorResult from './generator-result'
+import type GeneratorResult from './generator-result.js'
 
 const interleave =
   function *<Gs extends Generator<unknown>[]>(...gs: Gs): Generator<GeneratorResult<Gs[number]>> {

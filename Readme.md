@@ -9,7 +9,7 @@ npm i -E @prelude/generator
 ```ts
 import * as G from '@prelude/generator'
 
-console.log(G.take(10, G.cycle(G.ascii('a', 'c'))))
+console.log(G.take(10, G.cycle(G.charRange('a', 'c'))))
 ```
 
 # Functions
@@ -18,7 +18,7 @@ Name       | Finite input iterator
 -----------|--------------------------------
 all        | yes
 array      | yes
-ascii      | -
+charRange  | -
 chain      | no
 compact    | yes
 consume    | no

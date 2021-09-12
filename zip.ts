@@ -1,4 +1,4 @@
-import type GeneratorResult from './generator-result'
+import type GeneratorResult from './generator-result.js'
 
 const zip =
   function *<Gs extends Generator<unknown>[]>(...gs: Gs): Generator<{ [K in keyof Gs]: GeneratorResult<Gs[K]> }> {

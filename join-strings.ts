@@ -1,7 +1,7 @@
-import array from './array'
+import array from './array.js'
 
-const join =
+const joinStrings =
   (separator: string, g: Iterable<string>): string =>
     array(g).join(separator)
 
-export default join
+export default joinStrings
