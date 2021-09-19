@@ -1,10 +1,10 @@
-import * as G from '../'
+import * as G from '../index.js'
 
 test('interleave', () => {
   const g = G.interleave(
     G.cycle(G.range(0, 9)),
-    G.cycle(G.ascii('a', 'z')),
-    G.cycle(G.ascii('A', 'Z'))
+    G.cycle(G.charRange('a', 'z')),
+    G.cycle(G.charRange('A', 'Z'))
   )
   expect(G.array(G.take(3 * 5, g))).toEqual([
     0, 'a', 'A',

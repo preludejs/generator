@@ -1,6 +1,6 @@
-import of from './of'
-import take from './take'
-import type PeekableIterator from './peekable-iterator'
+import of from './of.js'
+import take from './take.js'
+import type PeekableIterator from './peekable-iterator.js'
 
 const peekable =
   <T>(g: Iterable<T>): PeekableIterator<T> => {
@@ -20,7 +20,7 @@ const peekable =
         if (index < 0 || !Number.isSafeInteger(index)) {
           throw new TypeError(`Invalid index value ${index}.`)
         }
-        queue.push(...take(index - queue.length + 1, g_))
+        queue.push(...take(index - queue.length + 1, g_, false))
         return index < queue.length ?
           { value: queue[index] } :
           { done: true, value: undefined }

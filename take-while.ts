@@ -1,4 +1,4 @@
-import type PeekableIterator from './peekable-iterator'
+import type PeekableIterator from './peekable-iterator.js'
 
 const takeWhile =
   function *<T>(f: (value: T) => boolean, g: PeekableIterator<T>): Generator<T> {

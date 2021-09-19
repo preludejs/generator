@@ -1,4 +1,4 @@
-import reduce from './reduce'
+import reduce from './reduce.js'
 
 const max =
   (g: Iterable<number>): number =>

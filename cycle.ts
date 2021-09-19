@@ -1,14 +1,17 @@
-import of from './of'
+import of from './of.js'
 
 const cycle =
   function *<T>(g: Iterable<T>): Generator<T> {
-    const values: T[] = []
-    for (const value of g) {
-      values.push(value)
-      yield value
+    const _s: T[] = []
+    for (const _ of g) {
+      _s.push(_)
+      yield _
+    }
+    if (_s.length === 0) {
+      return
     }
     while (true) {
-      yield *of(values)
+      yield *of(_s)
     }
   }
 

@@ -1,6 +1,8 @@
+import lift from './lift.js'
+
 const of =
-  function *<T>(g: Iterable<T>): Generator<T> {
-    for (const value of g) {
+  function *<T>(g: Iterator<T> | Iterable<T>): Generator<T> {
+    for (const value of lift(g)) {
       yield value
     }
   }

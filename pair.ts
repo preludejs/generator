@@ -1,3 +1,4 @@
+// TODO: close
 const pair =
   function *<A, B>(ga: Generator<A>, gb: Generator<B>): Generator<[ A, B ]> {
     while (true) {

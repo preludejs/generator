@@ -1,7 +1,7 @@
-import * as G from '../'
+import * as G from '../index.js'
 
-test('ascii', () => {
-  expect(G.array(G.ascii('a', 'd'))).toEqual([
+test('charRange', () => {
+  expect(G.array(G.charRange('a', 'd'))).toEqual([
     'a', 'b', 'c', 'd'
   ])
 })
