@@ -19,6 +19,7 @@ import of from './of.js'
 import pair from './pair.js'
 import partition from './partition.js'
 import peekable from './peekable.js'
+import pipe from './pipe.js'
 import range from './range.js'
 import reduce from './reduce.js'
 import repeat from './repeat.js'
@@ -59,6 +60,7 @@ export {
   partition,
   peekable,
   PeekableIterator,
+  pipe,
   range,
   reduce,
   repeat,

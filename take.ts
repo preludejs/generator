@@ -1,5 +1,5 @@
 import { inspect } from 'util'
-import iterator from './iterator'
+import iterator from './iterator.js'
 
 /**
  * Takes at most `n` elements from `g`.
