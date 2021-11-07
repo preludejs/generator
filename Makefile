@@ -4,7 +4,7 @@ clean:
 build-cjs:
 	@rm -Rf cjs
 	@npx tsc -m commonjs -d --sourceMap --outDir cjs
-  @echo '{"type":"commonjs"}' > cjs/package.json
+	@echo '{"type":"commonjs"}' > cjs/package.json
 
 build-mjs:
 	@rm -Rf mjs
