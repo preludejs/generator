@@ -1,5 +1,6 @@
 .github
 .vscode
 jest.config.json
+Makefile
 test
 wip

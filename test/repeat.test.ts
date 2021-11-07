@@ -1,4 +1,4 @@
-import * as G from '../index.js'
+import * as G from '../cjs/index.js'
 
 test('repeat', () => {
   expect(G.array(G.map(G.repeat(3, Math.random), _ => typeof _))).toEqual([

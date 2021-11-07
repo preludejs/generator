@@ -1,4 +1,4 @@
-import * as G from '../index.js'
+import * as G from '../cjs/index.js'
 
 test('is iterable non-closing', () => {
   const g = G.iterable(() => G.range(1, 100))

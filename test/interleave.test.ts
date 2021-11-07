@@ -1,4 +1,4 @@
-import * as G from '../index.js'
+import * as G from '../cjs/index.js'
 
 test('interleave', () => {
   const g = G.interleave(

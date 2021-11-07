@@ -1,4 +1,4 @@
-import * as G from '../index.js'
+import * as G from '../cjs/index.js'
 
 test('cycle', () => {
   expect(G.array(G.take(7, G.cycle([ 1, 2, 3 ]), false))).toEqual([

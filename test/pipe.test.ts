@@ -1,4 +1,4 @@
-import * as G from '../index.js'
+import * as G from '../cjs/index.js'
 
 test('pipe', () => {
   const double = (g: Iterable<number>) => G.map(g, _ => _ * 2)

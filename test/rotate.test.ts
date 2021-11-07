@@ -1,4 +1,4 @@
-import * as G from '../index.js'
+import * as G from '../cjs/index.js'
 
 test('simple', () => {
   expect(G.array(G.rotate(1, G.of([ 1, 2, 3 ])))).toEqual([ 2, 3, 1 ])

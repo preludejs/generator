@@ -1,4 +1,4 @@
-import * as G from '../index.js'
+import * as G from '../cjs/index.js'
 
 test('step', () => {
   expect(G.array(G.step(2, G.charRange('a', 'z')))).toEqual([

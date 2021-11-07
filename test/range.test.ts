@@ -1,4 +1,4 @@
-import * as G from '../index.js'
+import * as G from '../cjs/index.js'
 
 test('more than once on generator', () => {
   const g = G.range(1, 3)
