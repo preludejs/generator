@@ -1,4 +1,3 @@
-import { inspect } from 'util'
 import iterator from './iterator.js'
 
 /**
@@ -11,10 +10,10 @@ import iterator from './iterator.js'
 const take =
   function *<T>(n: number, g: Iterator<T> | Iterable<T>, done = true): Generator<T> {
     if (!Number.isSafeInteger(n)) {
-      throw new TypeError(`Expected number of elements to take to be a safe integer, got ${inspect(n)}.`)
+      throw new TypeError(`Expected number of elements to take to be a safe integer, got ${n}.`)
     }
     if (n < 0) {
-      throw new TypeError(`Expected number of elements to take to be non negative, got ${inspect(n)}.`)
+      throw new TypeError(`Expected number of elements to take to be non negative, got ${n}.`)
     }
     if (n === 0) {
       if (done === true) {
