@@ -9,44 +9,18 @@ npm i -E @prelude/generator
 ```ts
 import * as G from '@prelude/generator'
 
-console.log(G.take(10, G.cycle(G.charRange('a', 'c'))))
+console.log(G.pipe1(
+  G.charRange('a', 'c'),
+  G.cycle,
+  G.take(10),
+  G.array
+))
+// [
+//   'a', 'b', 'c', 'a',
+//   'b', 'c', 'a', 'b',
+//   'c', 'a'
+// ]
 ```
-
-# Functions
-
-Name       | Finite input iterator
------------|--------------------------------
-all        | yes
-array      | yes
-charRange  | -
-chain      | no
-compact    | yes
-consume    | no
-cycle      | no
-filter     | no
-interleave | no
-join       | yes
-map        | no
-max        | yes
-min        | yes
-of         | no
-pair       | no
-partition  | yes
-peekable   | no
-range      | -
-reduce     | yes
-repeat     | -
-rotate     | no
-skip       | no
-some       | no
-sort       | yes
-takeWhile  | no
-take       | no
-unique     | no
-while      | no
-withIndex  | no
-zipRecords | no
-zip        | no
 
 # License
 
