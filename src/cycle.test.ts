@@ -1,7 +1,7 @@
-import * as G from '../cjs/index.js'
+import * as G from './index.js'
 
 test('cycle', () => {
-  expect(G.array(G.take(7, G.cycle([ 1, 2, 3 ]), false))).toEqual([
+  expect(G.array(G.pipe1(G.cycle([ 1, 2, 3 ]), G.take(7)))).toEqual([
     1, 2, 3,
     1, 2, 3,
     1

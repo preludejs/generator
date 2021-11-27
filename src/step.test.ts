@@ -1,7 +1,7 @@
-import * as G from '../cjs/index.js'
+import * as G from './index.js'
 
 test('step', () => {
-  expect(G.array(G.step(2, G.charRange('a', 'z')))).toEqual([
+  expect(G.array(G.pipe1(G.charRange('a', 'z'), G.step(2)))).toEqual([
     'a',
     'c',
     'e',

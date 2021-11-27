@@ -1,7 +1,5 @@
-import lift from './lift.js'
-
 const array =
-  <T>(g: Iterator<T> | Iterable<T>): T[] =>
-    Array.from(lift(g))
+  <T>(g: Iterable<T>): T[] =>
+    Array.from(g)
 
 export default array

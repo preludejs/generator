@@ -5,9 +5,9 @@
  */
 const withIndex =
   function *<T>(g: Iterable<T>): Generator<[T, number]> {
-    let i = 0
-    for (const _ of g) {
-      yield [ _, i++ ]
+    let index = 0
+    for (const value of g) {
+      yield [ value, index++ ]
     }
   }
 

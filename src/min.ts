@@ -1,7 +1,6 @@
 import reduce from './reduce.js'
 
 const min =
-  (g: Iterable<number>): number =>
-    reduce((r, _) => Math.min(r, _), +Infinity, g)
+  reduce<number, number>((r, value) => Math.min(r, value), +Infinity)
 
 export default min

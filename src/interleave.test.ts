@@ -1,4 +1,4 @@
-import * as G from '../cjs/index.js'
+import * as G from './index.js'
 
 test('interleave', () => {
   const g = G.interleave(
@@ -6,7 +6,7 @@ test('interleave', () => {
     G.cycle(G.charRange('a', 'z')),
     G.cycle(G.charRange('A', 'Z'))
   )
-  expect(G.array(G.take(3 * 5, g))).toEqual([
+  expect(G.pipe1(g, G.take(3 * 5), G.array)).toEqual([
     0, 'a', 'A',
     1, 'b', 'B',
     2, 'c', 'C',

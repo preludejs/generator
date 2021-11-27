@@ -1,10 +1,10 @@
-/** @returns Generator of chars from `start` to `end`. */
+/** @returns Generator of characters from `first` to `last` inclusive. */
 const charRange =
-  function *(start: string, end: string): Generator<string> {
-    const start_ = start.charCodeAt(0)
-    const end_ = end.charCodeAt(0)
-    for (let i = start_; i <= end_; i++) {
-      yield String.fromCharCode(i)
+  function *(first: string, last: string): Generator<string> {
+    const firstCharCode = first.charCodeAt(0)
+    const lastCharCode = last.charCodeAt(0)
+    for (let charCode = firstCharCode; charCode <= lastCharCode; charCode++) {
+      yield String.fromCharCode(charCode)
     }
   }
 

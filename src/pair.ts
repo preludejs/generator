@@ -1,13 +1,13 @@
 // TODO: close
 const pair =
-  function *<A, B>(ga: Generator<A>, gb: Generator<B>): Generator<[ A, B ]> {
+  function *<A, B>(a: Generator<A>, b: Generator<B>): Generator<[ A, B ]> {
     while (true) {
-      const a = ga.next()
-      const b = gb.next()
-      if (a.done || b.done) {
+      const a_ = a.next()
+      const b_ = b.next()
+      if (a_.done || b_.done) {
         break
       }
-      yield [ a.value, b.value ]
+      yield [ a_.value, b_.value ]
     }
   }
 

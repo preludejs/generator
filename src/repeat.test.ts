@@ -1,7 +1,10 @@
-import * as G from '../cjs/index.js'
+import * as G from './index.js'
 
 test('repeat', () => {
-  expect(G.array(G.map(G.repeat(3, Math.random), _ => typeof _))).toEqual([
+  expect(G.array(G.pipe1(
+    G.repeat(3, Math.random),
+    G.map(_ => typeof _)
+  ))).toEqual([
     'number', 'number', 'number'
   ])
 })

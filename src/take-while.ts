@@ -1,18 +1,13 @@
-import type PeekableIterator from './peekable-iterator.js'
-
 const takeWhile =
-  function *<T>(f: (value: T) => boolean, g: PeekableIterator<T>): Generator<T> {
-    while (true) {
-      const peek = g.peek()
-      if (peek.done || !f(peek.value)) {
-        break
+  <T>(f: (value: T, index: number) => boolean) =>
+    function* (g: Iterable<T>): Generator<T> {
+      let i = 0
+      for (const value of g) {
+        if (!f(value, i++)) {
+          break
+        }
+        yield value
       }
-      const next = g.next()
-      if (next.done) {
-        break
-      }
-      yield next.value
     }
-  }
 
 export default takeWhile

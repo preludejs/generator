@@ -2,6 +2,6 @@
   "testEnvironment": "node",
   "transform": {},
   "testMatch": [
-    "<rootDir>/test/(*.)test.js"
+    "<rootDir>/cjs/(*.)test.js"
   ]
 }
