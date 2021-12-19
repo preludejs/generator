@@ -3,6 +3,7 @@ import charRange from './char-range.js'
 import compact from './compact.js'
 import concat from './concat.js'
 import consume from './consume.js'
+import count from './count.js'
 import cycle from './cycle.js'
 import defined from './defined.js'
 import every from './every.js'
@@ -36,6 +37,7 @@ export {
   compact,
   concat,
   consume,
+  count,
   cycle,
   defined,
   every,
