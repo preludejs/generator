@@ -11,6 +11,7 @@ import filter from './filter.js'
 import from_ from './from.js'
 import interleave from './interleave.js'
 import joinStrings from './join-strings.js'
+import length from './length.js'
 import map from './map.js'
 import max from './max.js'
 import min from './min.js'
@@ -47,6 +48,7 @@ export {
   from_ as from,
   interleave,
   joinStrings,
+  length,
   map,
   max,
   min,
