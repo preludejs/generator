@@ -29,6 +29,7 @@ import step from './step.js'
 import take from './take.js'
 import takeWhile from './take-while.js'
 import unique from './unique.js'
+import window_ from './window.js'
 
 export * from './prelude.js'
 
@@ -63,5 +64,6 @@ export {
   step,
   take,
   takeWhile,
-  unique
+  unique,
+  window_ as window
 }
