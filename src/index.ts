@@ -8,6 +8,7 @@ import cycle from './cycle.js'
 import defined from './defined.js'
 import every from './every.js'
 import filter from './filter.js'
+import from_ from './from.js'
 import interleave from './interleave.js'
 import joinStrings from './join-strings.js'
 import map from './map.js'
@@ -42,6 +43,7 @@ export {
   defined,
   every,
   filter,
+  from_ as from,
   interleave,
   joinStrings,
   map,
