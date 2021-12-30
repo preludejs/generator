@@ -25,6 +25,7 @@ import memoized from './memoized.js'
 import min from './min.js'
 import of from './of.js'
 import pair from './pair.js'
+import pipe from './pipe.js'
 import pipe1 from './pipe1.js'
 import range from './range.js'
 import reduce from './reduce.js'
@@ -71,6 +72,7 @@ export {
   min,
   of,
   pair,
+  pipe,
   pipe1,
   range,
   reduce,
