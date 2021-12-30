@@ -35,6 +35,7 @@ import take from './take.js'
 import takeWhile from './take-while.js'
 import unique from './unique.js'
 import window_ from './window.js'
+import yield_ from './yield.js'
 
 export * from './prelude.js'
 
@@ -75,5 +76,6 @@ export {
   take,
   takeWhile,
   unique,
-  window_ as window
+  window_ as window,
+  yield_ as yield
 }
