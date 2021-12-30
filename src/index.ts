@@ -19,6 +19,7 @@ import interleave from './interleave.js'
 import joinStrings from './join-strings.js'
 import length from './length.js'
 import map from './map.js'
+import maybeFind from './maybe-find.js'
 import max from './max.js'
 import memoized from './memoized.js'
 import min from './min.js'
@@ -65,6 +66,7 @@ export {
   length,
   map,
   max,
+  maybeFind,
   memoized,
   min,
   of,
