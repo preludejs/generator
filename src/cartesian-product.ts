@@ -1,12 +1,15 @@
 import array from './array.js'
 
+type Iterated<T> = T extends Iterator<infer U> ? U : never
+
 const cartesianProduct =
-  <T, U>(g: Iterable<T>) =>
-    function* (h: Iterable<U>): Generator<[U, T]> {
-      const g_ = array(g)
-      for (const a of h) {
+  <T, U extends undefined | Iterable<unknown>>(g?: U) =>
+    function* (h: Iterable<T>): Generator<[T, U extends undefined ? T : Iterated<U>]> {
+      const g_ = array(g ?? h)
+      const h_ = g ? h : g_
+      for (const a of h_) {
         for (const b of g_) {
-          yield [a, b]
+          yield [a, b] as [T, U extends undefined ? T : Iterated<U>]
         }
       }
     }
