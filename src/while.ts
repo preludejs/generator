@@ -1,4 +1,4 @@
-const takeWhile =
+const while_ =
   <T>(f: (value: T, index: number) => boolean) =>
     function* (g: Iterable<T>): Generator<T> {
       let i = 0
@@ -10,4 +10,4 @@ const takeWhile =
       }
     }
 
-export default takeWhile
+export default while_
