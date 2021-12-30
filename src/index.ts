@@ -1,4 +1,5 @@
 import array from './array.js'
+import cartesianProduct from './cartesian-product.js'
 import charRange from './char-range.js'
 import compact from './compact.js'
 import concat from './concat.js'
@@ -41,6 +42,7 @@ export * from './prelude.js'
 
 export {
   array,
+  cartesianProduct,
   charRange,
   compact,
   concat,
