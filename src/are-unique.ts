@@ -1,6 +1,6 @@
 const areUnique =
   <T, U>(g: Iterable<T>, f?: (value: T) => U): boolean => {
-    const set = new Set<U>()
+    const set = new Set<unknown>()
     const f_ = f ?? (_ => _)
     for (const value of g) {
       const key = f_(value)
