@@ -14,6 +14,7 @@ import joinStrings from './join-strings.js'
 import length from './length.js'
 import map from './map.js'
 import max from './max.js'
+import memoized from './memoized.js'
 import min from './min.js'
 import of from './of.js'
 import pair from './pair.js'
@@ -51,6 +52,7 @@ export {
   length,
   map,
   max,
+  memoized,
   min,
   of,
   pair,
