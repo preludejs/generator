@@ -33,6 +33,7 @@ import repeat from './repeat.js'
 import retain from './retain.js'
 import rotate from './rotate.js'
 import skip from './skip.js'
+import skipWhile from './skip-while.js'
 import some from './some.js'
 import sort from './sort.js'
 import step from './step.js'
@@ -81,6 +82,7 @@ export {
   retain,
   rotate,
   skip,
+  skipWhile,
   some,
   sort,
   step,
