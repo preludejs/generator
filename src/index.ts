@@ -38,6 +38,7 @@ import sort from './sort.js'
 import step from './step.js'
 import take from './take.js'
 import unique from './unique.js'
+import until from './until.js'
 import while_ from './while.js'
 import window_ from './window.js'
 import yield_ from './yield.js'
@@ -85,6 +86,7 @@ export {
   step,
   take,
   unique,
+  until,
   while_ as while,
   window_ as window,
   yield_ as yield
