@@ -10,6 +10,7 @@ import cycle from './cycle.js'
 import defined from './defined.js'
 import every from './every.js'
 import filter from './filter.js'
+import find from './find.js'
 import first from './first.js'
 import flatMap from './flat-map.js'
 import flatten from './flatten.js'
@@ -54,6 +55,7 @@ export {
   defined,
   every,
   filter,
+  find,
   first,
   from_ as from,
   flatMap,
