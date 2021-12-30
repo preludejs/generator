@@ -1,3 +1,4 @@
+import areUnique from './are-unique.js'
 import array from './array.js'
 import cartesianProduct from './cartesian-product.js'
 import charRange from './char-range.js'
@@ -41,6 +42,7 @@ import yield_ from './yield.js'
 export * from './prelude.js'
 
 export {
+  areUnique,
   array,
   cartesianProduct,
   charRange,
