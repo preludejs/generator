@@ -15,12 +15,14 @@ import first from './first.js'
 import flatMap from './flat-map.js'
 import flatten from './flatten.js'
 import from_ from './from.js'
+import group from './group.js'
+import grouped from './grouped.js'
 import interleave from './interleave.js'
 import joinStrings from './join-strings.js'
 import length from './length.js'
 import map from './map.js'
-import maybeFind from './maybe-find.js'
 import max from './max.js'
+import maybeFind from './maybe-find.js'
 import memoized from './memoized.js'
 import min from './min.js'
 import of from './of.js'
@@ -42,7 +44,10 @@ import unique from './unique.js'
 import until from './until.js'
 import while_ from './while.js'
 import window_ from './window.js'
+import withIndex from './with-index.js'
 import yield_ from './yield.js'
+import zip from './zip.js'
+import zipRecord from './zip-record.js'
 
 export * from './prelude.js'
 
@@ -62,6 +67,8 @@ export {
   find,
   first,
   from_ as from,
+  group,
+  grouped,
   flatMap,
   flatten,
   interleave,
@@ -91,5 +98,8 @@ export {
   until,
   while_ as while,
   window_ as window,
-  yield_ as yield
+  withIndex,
+  yield_ as yield,
+  zip,
+  zipRecord
 }
