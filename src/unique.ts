@@ -1,9 +1,12 @@
 const unique =
-  <T>(f: (value: T) => string | number) =>
+  <T>(f: (value: T, index: number) => string | number) =>
     function* (g: Generator<T>): Generator<T> {
       const seen = new Set<string | number>()
+      let index = 0
       for (const value of g) {
-        if (!seen.has(f(value))) {
+        const k = f(value, index++)
+        if (!seen.has(k)) {
+          seen.add(k)
           yield value
         }
       }
