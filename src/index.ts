@@ -28,6 +28,7 @@ import memoized from './memoized.js'
 import min from './min.js'
 import of from './of.js'
 import pair from './pair.js'
+import permutations from './permutations.js'
 import pipe from './pipe.js'
 import pipe1 from './pipe1.js'
 import range from './range.js'
@@ -43,6 +44,7 @@ import step from './step.js'
 import take from './take.js'
 import unique from './unique.js'
 import unsafeCombinations from './unsafe-combinations.js'
+import unsafePermutations from './unsafe-permutations.js'
 import until from './until.js'
 import while_ from './while.js'
 import window_ from './window.js'
@@ -84,6 +86,7 @@ export {
   min,
   of,
   pair,
+  permutations,
   pipe,
   pipe1,
   range,
@@ -99,6 +102,7 @@ export {
   take,
   unique,
   unsafeCombinations,
+  unsafePermutations,
   until,
   while_ as while,
   window_ as window,
