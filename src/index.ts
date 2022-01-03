@@ -20,10 +20,12 @@ import group from './group.js'
 import grouped from './grouped.js'
 import interleave from './interleave.js'
 import joinStrings from './join-strings.js'
+import last from './last.js'
 import length from './length.js'
 import map from './map.js'
 import max from './max.js'
 import maybeFind from './maybe-find.js'
+import maybeLast from './maybe-last.js'
 import memoized from './memoized.js'
 import min from './min.js'
 import of from './of.js'
@@ -79,10 +81,12 @@ export {
   flatten,
   interleave,
   joinStrings,
+  last,
   length,
   map,
   max,
   maybeFind,
+  maybeLast,
   memoized,
   min,
   of,
