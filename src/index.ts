@@ -45,6 +45,7 @@ import some from './some.js'
 import sort from './sort.js'
 import step from './step.js'
 import take from './take.js'
+import tap from './tap.js'
 import unique from './unique.js'
 import unsafeCombinations from './unsafe-combinations.js'
 import unsafePermutations from './unsafe-permutations.js'
@@ -106,6 +107,7 @@ export {
   sort,
   step,
   take,
+  tap,
   unique,
   unsafeCombinations,
   unsafePermutations,
