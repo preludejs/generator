@@ -35,6 +35,7 @@ import range from './range.js'
 import reduce from './reduce.js'
 import repeat from './repeat.js'
 import retain from './retain.js'
+import reverse from './reverse.js'
 import rotate from './rotate.js'
 import skip from './skip.js'
 import skipWhile from './skip-while.js'
@@ -93,6 +94,7 @@ export {
   reduce,
   repeat,
   retain,
+  reverse,
   rotate,
   skip,
   skipWhile,
