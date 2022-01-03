@@ -2,6 +2,7 @@ import areUnique from './are-unique.js'
 import array from './array.js'
 import cartesianProduct from './cartesian-product.js'
 import charRange from './char-range.js'
+import combinations from './combinations.js'
 import compact from './compact.js'
 import concat from './concat.js'
 import consume from './consume.js'
@@ -41,6 +42,7 @@ import sort from './sort.js'
 import step from './step.js'
 import take from './take.js'
 import unique from './unique.js'
+import unsafeCombinations from './unsafe-combinations.js'
 import until from './until.js'
 import while_ from './while.js'
 import window_ from './window.js'
@@ -56,6 +58,7 @@ export {
   array,
   cartesianProduct,
   charRange,
+  combinations,
   compact,
   concat,
   consume,
@@ -95,6 +98,7 @@ export {
   step,
   take,
   unique,
+  unsafeCombinations,
   until,
   while_ as while,
   window_ as window,
