@@ -4,6 +4,7 @@ import cartesianProduct from './cartesian-product.js'
 import charRange from './char-range.js'
 import combinations from './combinations.js'
 import compact from './compact.js'
+import composites from './composites.js'
 import concat from './concat.js'
 import consume from './consume.js'
 import count from './count.js'
@@ -67,6 +68,7 @@ export {
   charRange,
   combinations,
   compact,
+  composites,
   concat,
   consume,
   count,
