@@ -1,5 +1,7 @@
 import areUnique from './are-unique.js'
 import array from './array.js'
+import bigproduct from './bigproduct.js'
+import bigsum from './bigsum.js'
 import cartesianProduct from './cartesian-product.js'
 import charRange from './char-range.js'
 import combinations from './combinations.js'
@@ -36,6 +38,7 @@ import pipe from './pipe.js'
 import pipe1 from './pipe1.js'
 import primeFactors from './prime-factors.js'
 import primes from './primes.js'
+import product from './product.js'
 import range from './range.js'
 import reduce from './reduce.js'
 import repeat from './repeat.js'
@@ -47,6 +50,7 @@ import skipWhile from './skip-while.js'
 import some from './some.js'
 import sort from './sort.js'
 import step from './step.js'
+import sum from './sum.js'
 import take from './take.js'
 import tap from './tap.js'
 import unique from './unique.js'
@@ -65,6 +69,8 @@ export * from './prelude.js'
 export {
   areUnique,
   array,
+  bigproduct,
+  bigsum,
   cartesianProduct,
   charRange,
   combinations,
@@ -79,11 +85,11 @@ export {
   filter,
   find,
   first,
+  flatMap,
+  flatten,
   from_ as from,
   group,
   grouped,
-  flatMap,
-  flatten,
   interleave,
   joinStrings,
   last,
@@ -101,6 +107,7 @@ export {
   pipe1,
   primeFactors,
   primes,
+  product,
   range,
   reduce,
   repeat,
@@ -112,6 +119,7 @@ export {
   some,
   sort,
   step,
+  sum,
   take,
   tap,
   unique,
