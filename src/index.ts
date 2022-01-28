@@ -34,6 +34,7 @@ import pair from './pair.js'
 import permutations from './permutations.js'
 import pipe from './pipe.js'
 import pipe1 from './pipe1.js'
+import primeFactors from './prime-factors.js'
 import primes from './primes.js'
 import range from './range.js'
 import reduce from './reduce.js'
@@ -98,6 +99,7 @@ export {
   permutations,
   pipe,
   pipe1,
+  primeFactors,
   primes,
   range,
   reduce,
