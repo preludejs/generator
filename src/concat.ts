@@ -1,11 +1,12 @@
-import lift from './lift.js'
+import type { Iterated } from './prelude.js'
 
-type TOf<G> = G extends Iterator<infer T> ? T : G extends Iterable<infer T> ? T : never
-
+/** @yields values from provided iterables. */
 const concat =
-  function *<Gs extends (Iterator<unknown> | Iterable<unknown>)[]>(...gs: Gs): Generator<TOf<Gs[number]>> {
+  function* <Gs extends Iterable<unknown>[]>(...gs: Gs): Generator<Iterated<Gs[number]>> {
     for (const g of gs) {
-      yield *lift(g) as Generator<TOf<Gs[number]>>
+      for (const value of g) {
+        yield value as Iterated<Gs[number]>
+      }
     }
   }
 

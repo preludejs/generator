@@ -6,7 +6,7 @@ const skip =
           break
         }
       }
-      yield *g
+      yield* g
     }
 
 export default skip

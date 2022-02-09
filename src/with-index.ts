@@ -4,7 +4,7 @@
  * @returns Generator yielding an index together with an element.
  */
 const withIndex =
-  function *<T>(g: Iterable<T>): Generator<[T, number]> {
+  function* <T>(g: Iterable<T>): Generator<[T, number]> {
     let index = 0
     for (const value of g) {
       yield [ value, index++ ]

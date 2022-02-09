@@ -1,3 +1,4 @@
+/** @yields flattened values from provided iterable iterables. */
 const flatten =
   function* <T>(gs: Iterable<Iterable<T>>): Generator<T> {
     for (const g of gs) {

@@ -1,7 +1,7 @@
 import type { Generated } from './prelude.js'
 
 const zipRecord =
-  function *<Gs extends { [key: string]: Generator<unknown> }>(gs: Gs): Generator<{ [K in keyof Gs]: Generated<Gs[K]> }> {
+  function* <Gs extends { [key: string]: Generator<unknown> }>(gs: Gs): Generator<{ [K in keyof Gs]: Generated<Gs[K]> }> {
     const keys = Object.keys(gs)
     while (true) {
       const rs = keys.map(_ => gs[_].next())

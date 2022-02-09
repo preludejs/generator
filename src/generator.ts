@@ -1,4 +1,4 @@
-/** @returns Iterable from iterator which is a customary generator. */
+/** @returns generator proxy from provided iterator. */
 const generator =
   <T>(g: Iterator<T>): Generator<T> =>
     new Proxy(g, {

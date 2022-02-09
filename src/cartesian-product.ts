@@ -1,7 +1,7 @@
 import array from './array.js'
+import type { Iterated } from './prelude.js'
 
-type Iterated<T> = T extends Iterator<infer U> ? U : never
-
+/** @yields cartesian product pairs. */
 const cartesianProduct =
   <T, U extends undefined | Iterable<unknown>>(g?: U) =>
     function* (h: Iterable<T>): Generator<[T, U extends undefined ? T : Iterated<U>]> {

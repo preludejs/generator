@@ -1,3 +1,9 @@
+
+/**
+ * @returns `true` if iterable has unique elements, `false` otherwise.
+ *
+ * Optionally mapping function from element to same-value equality key can be provided.
+ */
 const areUnique =
   <T, U>(g: Iterable<T>, f?: (value: T) => U): boolean => {
     const set = new Set<unknown>()

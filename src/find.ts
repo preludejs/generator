@@ -1,3 +1,10 @@
+/**
+ * @returns first found value that passes provided predicate.
+ *
+ * @throws {Error} if not found.
+ *
+ * @see maybeFind for non-throwing variant.
+ */
 const find =
   <T>(f: (value: T, index: number) => boolean) =>
     (g: Iterable<T>): T => {

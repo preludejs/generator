@@ -1,3 +1,4 @@
+/** @returns number of elements that passed predicate test. */
 const count =
   <T>(f: (value: T, index: number) => boolean = () => true) =>
     (g: Iterable<T>): number => {

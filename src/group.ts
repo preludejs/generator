@@ -1,20 +1,17 @@
 const group =
-  <T, K extends string>(f: (value: T) => K) =>
-    function* (g: Iterable<T>): Generator<[ key: K, values: T[] ]> {
-      const ks: K[] = []
-      const rs = {} as Record<K, T[]>
+  <T, K extends boolean | number | string | symbol>(f: (value: T) => K) =>
+    function* (g: Iterable<T>): Generator<[ key: K, values: T[] ], void, undefined> {
+      const rs = new Map<K, T[]>()
       for (const value of g) {
         const k = f(value)
-        if (k in rs) {
-          rs[k].push(value)
+        const values = rs.get(k)
+        if (values) {
+          values.push(value)
         } else {
-          ks.push(k)
-          rs[k] = [ value ]
+          rs.set(k, [ value ])
         }
       }
-      for (const k of ks) {
-        yield [ k, rs[k] ]
-      }
+      yield* rs.entries()
     }
 
 export default group

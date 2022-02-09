@@ -1,7 +1,12 @@
-type Defined<T> = T extends undefined ? never : T;
+import type { Defined } from './prelude.js'
 
+/**
+ * @yields defined values, `undefined` values are filtered out.
+ *
+ * @see compact
+ */
 const defined =
-  function *<T>(g: Iterable<T>): Generator<Defined<T>> {
+  function* <T>(g: Iterable<T>): Generator<Defined<T>> {
     for (const _ of g) {
       if (typeof _ !== 'undefined') {
         yield _ as Defined<T>

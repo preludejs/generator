@@ -1,3 +1,4 @@
+/** @returns `true` if all elements are passing provided predicate, `false` otherwise. */
 const every =
   <T>(f: (value: T, index: number) => boolean) =>
     (g: Iterable<T>): boolean => {

@@ -1,3 +1,4 @@
+/** @yields fibonacci sequence. */
 const fibonacci =
   function* (a = 0, b = 1) {
     while (true) {

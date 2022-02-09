@@ -1,3 +1,4 @@
+/** @yields elements passing provided predicate only. */
 const filter =
   <T>(f: (value: T, index: number) => boolean) =>
     function* (g: Iterable<T>): Generator<T> {

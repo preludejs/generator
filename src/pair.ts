@@ -1,6 +1,6 @@
 // TODO: close
 const pair =
-  function *<A, B>(a: Generator<A>, b: Generator<B>): Generator<[ A, B ]> {
+  function* <A, B>(a: Generator<A>, b: Generator<B>): Generator<[ A, B ]> {
     while (true) {
       const a_ = a.next()
       const b_ = b.next()
