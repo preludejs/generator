@@ -1,17 +1,9 @@
+import grouped from './grouped.js'
+
+/** @yields grouped entries based on arbitrary element to key mapping. */
 const group =
-  <T, K extends boolean | number | string | symbol>(f: (value: T) => K) =>
-    function* (g: Iterable<T>): Generator<[ key: K, values: T[] ], void, undefined> {
-      const rs = new Map<K, T[]>()
-      for (const value of g) {
-        const k = f(value)
-        const values = rs.get(k)
-        if (values) {
-          values.push(value)
-        } else {
-          rs.set(k, [ value ])
-        }
-      }
-      yield* rs.entries()
-    }
+  <T, K>(f: (value: T) => K) =>
+    (g: Iterable<T>) =>
+      grouped(f)(g).entries()
 
 export default group

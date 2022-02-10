@@ -22,6 +22,7 @@ import flatten from './flatten.js'
 import from_ from './from.js'
 import group from './group.js'
 import grouped from './grouped.js'
+import groupedRecord from './grouped-record.js'
 import interleave from './interleave.js'
 import joinStrings from './join-strings.js'
 import last from './last.js'
@@ -92,6 +93,7 @@ export {
   from_ as from,
   group,
   grouped,
+  groupedRecord,
   interleave,
   joinStrings,
   last,
