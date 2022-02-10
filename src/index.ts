@@ -36,7 +36,7 @@ import of from './of.js'
 import pair from './pair.js'
 import permutations from './permutations.js'
 import pipe from './pipe.js'
-import pipe1 from './pipe1.js'
+import pipe0 from './pipe0.js'
 import primeFactors from './prime-factors.js'
 import primes from './primes.js'
 import product from './product.js'
@@ -106,7 +106,7 @@ export {
   pair,
   permutations,
   pipe,
-  pipe1,
+  pipe0,
   primeFactors,
   primes,
   product,

@@ -6,7 +6,7 @@ test('group', () => {
     { key: '1', value: 'b' },
     { key: 1, value: 'c' }
   ]
-  expect(G.pipe1(values, G.group(_ => _.key), G.array)).toEqual([
+  expect(G.pipe(values, G.group(_ => _.key), G.array)).toEqual([
     [ 1, [
       { key: 1, value: 'a' },
       { key: 1, value: 'c' }

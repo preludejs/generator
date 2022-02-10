@@ -1,6 +1,6 @@
 import array from './array.js'
 import of from './of.js'
-import pipe1 from './pipe1.js'
+import pipe from './pipe.js'
 import retain from './retain.js'
 import take from './take.js'
 
@@ -18,7 +18,7 @@ const rotateBackward =
 const rotateForward =
   <T>(n: number) =>
     function* (g: Iterable<T>): Generator<T> {
-      const q = pipe1(of(g), retain, take(n), array)
+      const q = pipe(of(g), retain, take(n), array)
       const m = q.length
       let i = 0
       for (const _ of g) {

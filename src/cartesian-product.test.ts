@@ -1,7 +1,7 @@
 import * as G from './index.js'
 
 test('self cartesian product', () => {
-  const xs = G.pipe1(G.range(3, 5), G.cartesianProduct(), G.array)
+  const xs = G.pipe(G.range(3, 5), G.cartesianProduct(), G.array)
   expect(xs).toEqual([
     [ 3, 3 ],
     [ 3, 4 ],
@@ -18,7 +18,7 @@ test('self cartesian product', () => {
 test('cartesian product', () => {
   const xs = G.range(3, 5)
   const ys = G.charRange('a', 'c')
-  const zs = G.pipe1(xs, G.cartesianProduct(ys), G.array)
+  const zs = G.pipe(xs, G.cartesianProduct(ys), G.array)
   expect(zs).toEqual([
     [ 3, 'a' ],
     [ 3, 'b' ],

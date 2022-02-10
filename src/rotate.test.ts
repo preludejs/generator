@@ -2,7 +2,7 @@ import * as G from './index.js'
 
 const rotate =
   (n: number, xs = [ 1, 2, 3 ]) =>
-    G.pipe1(G.of(xs), G.rotate(n), G.array)
+    G.pipe(G.of(xs), G.rotate(n), G.array)
 
 test('simple', () => {
   expect(rotate(1)).toEqual([ 2, 3, 1 ])

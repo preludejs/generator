@@ -1,7 +1,7 @@
 import * as G from './index.js'
 
 test('repeat', () => {
-  expect(G.array(G.pipe1(
+  expect(G.array(G.pipe(
     G.repeat(3, Math.random),
     G.map(_ => typeof _)
   ))).toEqual([
