@@ -24,6 +24,7 @@ import group from './group.js'
 import grouped from './grouped.js'
 import groupedRecord from './grouped-record.js'
 import interleave from './interleave.js'
+import iterator from './iterator.js'
 import joinStrings from './join-strings.js'
 import last from './last.js'
 import length from './length.js'
@@ -42,6 +43,7 @@ import primeFactors from './prime-factors.js'
 import primes from './primes.js'
 import product from './product.js'
 import range from './range.js'
+import recursive from './recursive.js'
 import reduce from './reduce.js'
 import repeat from './repeat.js'
 import retain from './retain.js'
@@ -95,6 +97,7 @@ export {
   grouped,
   groupedRecord,
   interleave,
+  iterator,
   joinStrings,
   last,
   length,
@@ -113,6 +116,7 @@ export {
   primes,
   product,
   range,
+  recursive,
   reduce,
   repeat,
   retain,

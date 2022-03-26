@@ -7,3 +7,18 @@ test('retain', () => {
   expect(G.pipe(g, G.take(3), G.array)).toEqual([ 7, 8, 9 ])
   expect(G.pipe(g, G.take(3), G.array)).toEqual([])
 })
+
+test('for', () => {
+  const g = G.retain(G.range(1, 5), 2)
+  for (let _ of g) {
+    break
+  }
+  for (let _ of g) {
+    break
+  }
+  const values: number[] = []
+  for (let value of g) {
+    values.push(value)
+  }
+  expect(values).toEqual([ 3, 4, 5 ])
+})

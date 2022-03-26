@@ -1,13 +1,13 @@
 const retain =
-  <T = unknown, TReturn = unknown, TNext = unknown>(g: Generator<T>) => {
-    let retainCount = 1
+  <T = unknown, TReturn = unknown, TNext = unknown>(g: Generator<T>, count = 1) => {
+    let count_ = count
     const g_: Generator<T, TReturn | undefined, TNext> = {
       next() {
         return g.next()
       },
       return(value: TReturn) {
-        if (retainCount > 0) {
-          retainCount--
+        if (count_ > 0) {
+          count_--
           return { done: true, value: undefined }
         }
         return g_.return(value)

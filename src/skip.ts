@@ -1,12 +1,12 @@
 const skip =
   <T>(n: number) =>
-    function* (g: Generator<T>): Generator<T> {
-      for (let i = 0; i < n; i++) {
-        if (g.next().done) {
-          break
+    function* (g: Iterable<T>): Generator<T> {
+      let i = 0
+      for (const value of g) {
+        if (++i > n) {
+          yield value
         }
       }
-      yield* g
     }
 
 export default skip

@@ -1,13 +1,16 @@
-// TODO: close
+import iterator from './iterator.js'
+
 const pair =
-  function* <A, B>(a: Generator<A>, b: Generator<B>): Generator<[ A, B ]> {
+  function* <A, B>(a: Iterable<A>, b: Iterable<B>): Generator<[ A, B ]> {
+    const a_ = iterator(a)
+    const b_ = iterator(b)
     while (true) {
-      const a_ = a.next()
-      const b_ = b.next()
-      if (a_.done || b_.done) {
+      const a__ = a_.next()
+      const b__ = b_.next()
+      if (a__.done || b__.done) {
         break
       }
-      yield [ a_.value, b_.value ]
+      yield [ a__.value, b__.value ]
     }
   }
 
