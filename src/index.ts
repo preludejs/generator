@@ -21,8 +21,8 @@ import flatMap from './flat-map.js'
 import flatten from './flatten.js'
 import from_ from './from.js'
 import group from './group.js'
-import grouped from './grouped.js'
-import groupedRecord from './grouped-record.js'
+import groupMap from './group-map.js'
+import groupObject from './group-object.js'
 import interleave from './interleave.js'
 import iterator from './iterator.js'
 import joinStrings from './join-strings.js'
@@ -96,8 +96,8 @@ export {
   flatten,
   from_ as from,
   group,
-  grouped,
-  groupedRecord,
+  groupMap,
+  groupObject,
   interleave,
   iterator,
   joinStrings,

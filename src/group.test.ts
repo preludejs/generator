@@ -1,6 +1,6 @@
 import * as G from './index.js'
 
-test('group', () => {
+test('groupMap', () => {
   const values = [
     { key: 1, value: 'a' },
     { key: '1', value: 'b' },
