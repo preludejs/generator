@@ -32,6 +32,7 @@ import map from './map.js'
 import max from './max.js'
 import maybeFind from './maybe-find.js'
 import maybeLast from './maybe-last.js'
+import maybeSingle from './maybe-single.js'
 import memoized from './memoized.js'
 import min from './min.js'
 import of from './of.js'
@@ -49,6 +50,7 @@ import repeat from './repeat.js'
 import retain from './retain.js'
 import reverse from './reverse.js'
 import rotate from './rotate.js'
+import single from './single.js'
 import skip from './skip.js'
 import skipWhile from './skip-while.js'
 import some from './some.js'
@@ -105,6 +107,7 @@ export {
   max,
   maybeFind,
   maybeLast,
+  maybeSingle,
   memoized,
   min,
   of,
@@ -122,6 +125,7 @@ export {
   retain,
   reverse,
   rotate,
+  single,
   skip,
   skipWhile,
   some,
