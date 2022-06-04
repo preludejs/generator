@@ -1,5 +1,6 @@
 import areUnique from './are-unique.js'
 import array from './array.js'
+import batch from './batch.js'
 import bigproduct from './bigproduct.js'
 import bigsum from './bigsum.js'
 import cartesianProduct from './cartesian-product.js'
@@ -75,6 +76,7 @@ export * from './prelude.js'
 export {
   areUnique,
   array,
+  batch,
   bigproduct,
   bigsum,
   cartesianProduct,
