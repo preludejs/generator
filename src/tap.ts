@@ -1,10 +1,11 @@
+/** Taps into values with optional state. */
 const tap =
-  <T, U>(f: (value: T, index: number, state: undefined | U) => U) =>
-    function* (g: Iterable<T>): Generator<T> {
+  <T, U>(callback: (value: T, index: number, state: undefined | U) => U) =>
+    function* (values: Iterable<T>): Generator<T> {
       let index = 0
       let state: undefined | U = undefined
-      for (const value of g) {
-        state = f(value, index++, state)
+      for (const value of values) {
+        state = callback(value, index++, state)
         yield value
       }
     }

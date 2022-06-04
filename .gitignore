@@ -3,3 +3,6 @@ cjs
 mjs
 node_modules
 wip
+configurationCache.log
+dryrun.log
+targets.log

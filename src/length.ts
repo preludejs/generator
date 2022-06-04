@@ -1,10 +1,8 @@
+import count from './count.js'
+
+/** @returns length property of values if available, otherwise counts values. */
 const length =
-  (g: Iterable<unknown>): number => {
-    let i = 0
-    for (const _ of g) {
-      i++
-    }
-    return i
-  }
+  (values: Iterable<unknown>): number =>
+    values['length'] ?? count()(values)
 
 export default length

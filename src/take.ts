@@ -3,14 +3,14 @@ const take =
     if (!Number.isSafeInteger(n)) {
       throw new TypeError(`Expected number of elements to take to be a safe integer, got ${n}.`)
     }
-    return function* (g: Iterable<T>): Generator<T> {
+    return function* (values: Iterable<T>): Generator<T> {
       if (n <= 0) {
         return
       }
-      let i = 0
-      for (const value of g) {
+      let index = 0
+      for (const value of values) {
         yield value
-        if (++i >= n) {
+        if (++index >= n) {
           break
         }
       }

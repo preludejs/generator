@@ -1,9 +1,11 @@
+
+/** @yields values while predicate returns true. */
 const while_ =
-  <T>(f: (value: T, index: number) => boolean) =>
-    function* (g: Iterable<T>): Generator<T> {
-      let i = 0
-      for (const value of g) {
-        if (!f(value, i++)) {
+  <T>(predicate: (value: T, index: number) => boolean) =>
+    function* (values: Iterable<T>): Generator<T> {
+      let index = 0
+      for (const value of values) {
+        if (!predicate(value, index++)) {
           break
         }
         yield value

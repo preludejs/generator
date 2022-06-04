@@ -1,6 +1,6 @@
 /** @returns an array from iterable. */
 const array =
-  <T>(g: Iterable<T>): T[] =>
-    Array.from(g)
+  <T>(values: Iterable<T>): T[] =>
+    Array.from(values)
 
 export default array

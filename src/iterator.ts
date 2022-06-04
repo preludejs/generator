@@ -1,6 +1,6 @@
 /** @returns iterator of iterable. */
 const iterator =
-  <T>(g: Iterable<T>): Iterator<T> =>
-    g[Symbol.iterator]?.() ?? g
+  <T>(values: Iterable<T>): Iterator<T> =>
+    values[Symbol.iterator]?.() ?? values
 
 export default iterator

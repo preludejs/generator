@@ -1,9 +1,9 @@
 /** Performs side effect function on each of iterable value. */
 const consume =
-  <T>(f?: (value: T) => unknown) =>
-    (g: Iterable<T>): void => {
-      for (const value of g) {
-        f?.(value)
+  <T>(maybeHandle?: (value: T) => unknown) =>
+    (values: Iterable<T>): void => {
+      for (const value of values) {
+        maybeHandle?.(value)
       }
     }
 

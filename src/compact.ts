@@ -4,10 +4,10 @@
  * @see defined for filtering out `undefined` elements only.
  */
 const compact =
-  function* <T>(g: Iterable<T>): Generator<NonNullable<T>> {
-    for (const _ of g) {
-      if (_ != null) {
-        yield _ as NonNullable<T>
+  function* <T>(values: Iterable<T>): Generator<NonNullable<T>> {
+    for (const value of values) {
+      if (value != null) {
+        yield value as NonNullable<T>
       }
     }
   }

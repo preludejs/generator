@@ -9,7 +9,7 @@ const maybeSingle =
   <T>(values: Iterable<T>): undefined | T => {
     let index = 0
     let first: undefined | T
-    for (let value of values) {
+    for (const value of values) {
       if (++index === 1) {
         first = value
         continue

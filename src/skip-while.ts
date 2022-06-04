@@ -1,10 +1,10 @@
 const skipWhile =
-  <T>(f: (value: T, index: number) => boolean) =>
-    function* (g: Iterable<T>): Generator<T> {
-      let yield_ = false
+  <T>(predicate: (value: T, index: number) => boolean) =>
+    function* (values: Iterable<T>): Generator<T> {
+      let yielding = false
       let index = 0
-      for (const value of g) {
-        if ((yield_ = yield_ || !f(value, index++))) {
+      for (const value of values) {
+        if ((yielding = yielding || !predicate(value, index++))) {
           yield value
         }
       }

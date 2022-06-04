@@ -2,8 +2,8 @@ import unsafePermutations from './unsafe-permutations.js'
 
 const permutations =
   <T>(k?: number) =>
-    function* (g: Iterable<T>): Generator<T[]> {
-      for (const permutation of unsafePermutations<T>(k)(g)) {
+    function* (values: Iterable<T>): Generator<T[]> {
+      for (const permutation of unsafePermutations<T>(k)(values)) {
         yield permutation.slice()
       }
     }

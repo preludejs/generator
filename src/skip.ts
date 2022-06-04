@@ -1,9 +1,9 @@
 const skip =
   <T>(n: number) =>
-    function* (g: Iterable<T>): Generator<T> {
-      let i = 0
-      for (const value of g) {
-        if (++i > n) {
+    function* (values: Iterable<T>): Generator<T> {
+      let index = 0
+      for (const value of values) {
+        if (++index > n) {
           yield value
         }
       }

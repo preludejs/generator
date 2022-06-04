@@ -1,15 +1,15 @@
 /** @returns number of elements that passed predicate test. */
 const count =
-  <T>(f: (value: T, index: number) => boolean = () => true) =>
-    (g: Iterable<T>): number => {
-      let count_ = 0
+  <T>(predicate: (value: T, index: number) => boolean = () => true) =>
+    (values: Iterable<T>): number => {
+      let result = 0
       let index = 0
-      for (const value of g) {
-        if (f(value, index++)) {
-          count_++
+      for (const value of values) {
+        if (predicate(value, index++)) {
+          result++
         }
       }
-      return count_
+      return result
     }
 
 export default count

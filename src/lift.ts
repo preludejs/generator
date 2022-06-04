@@ -5,9 +5,9 @@ import generator from './generator.js'
  * An opposite of `iterator` function.
  */
 const lift =
-  <T>(g: Iterator<T> | Iterable<T>): Iterable<T> =>
-    Symbol.iterator in g ?
-      g as Iterable<T> :
-      generator(g as Iterator<T>)
+  <T>(values: Iterator<T> | Iterable<T>): Iterable<T> =>
+    Symbol.iterator in values ?
+      values as Iterable<T> :
+      generator(values as Iterator<T>)
 
 export default lift

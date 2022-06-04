@@ -1,12 +1,13 @@
+/** @yields unique values using provided mapping function. */
 const unique =
-  <T>(f: (value: T, index: number) => string | number) =>
-    function* (g: Iterable<T>): Generator<T> {
+  <T>(keyOfValue: (value: T, index: number) => string | number) =>
+    function* (values: Iterable<T>): Generator<T> {
       const seen = new Set<string | number>()
       let index = 0
-      for (const value of g) {
-        const k = f(value, index++)
-        if (!seen.has(k)) {
-          seen.add(k)
+      for (const value of values) {
+        const key = keyOfValue(value, index++)
+        if (!seen.has(key)) {
+          seen.add(key)
           yield value
         }
       }

@@ -1,14 +1,23 @@
+/**
+ * @yields window of values.
+ *
+ * @param n window length.
+ * @param yieldShorter should yield shorter range if collection is shorter than window (default false).
+ */
 const window =
-  <T>(n: number) =>
-    function* (g: Iterable<T>): Generator<T[]> {
-      const values: T[] = []
-      for (const value of g) {
-        switch (values.push(value)) {
+  <T>(n: number, yieldShorter = false) =>
+    function* (values: Iterable<T>): Generator<T[]> {
+      const range: T[] = []
+      for (const value of values) {
+        switch (range.push(value)) {
           case n + 1:
-            values.shift()
+            range.shift()
           case n:
-            yield values.slice()
+            yield range.slice()
         }
+      }
+      if (range.length < n && yieldShorter) {
+        yield range
       }
     }
 

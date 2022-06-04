@@ -2,8 +2,8 @@ import groupMap from './group-map.js'
 
 /** @yields grouped entries based on arbitrary element to key mapping. */
 const group =
-  <T, K>(f: (value: T) => K) =>
-    (g: Iterable<T>) =>
-      groupMap(f)(g).entries()
+  <T, K>(keyOfValue: (value: T) => K) =>
+    (values: Iterable<T>) =>
+      groupMap(keyOfValue)(values).entries()
 
 export default group

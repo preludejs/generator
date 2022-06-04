@@ -6,11 +6,11 @@
  * @see maybeFind for non-throwing variant.
  */
 const find =
-  <T>(f: (value: T, index: number) => boolean) =>
-    (g: Iterable<T>): T => {
-      let i = 0
-      for (const value of g) {
-        if (f(value, i++)) {
+  <T>(predicate: (value: T, index: number) => boolean) =>
+    (values: Iterable<T>): T => {
+      let index = 0
+      for (const value of values) {
+        if (predicate(value, index++)) {
           return value
         }
       }

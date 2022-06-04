@@ -1,7 +1,7 @@
 /** @returns generator proxy from provided iterator. */
 const generator =
-  <T>(g: Iterator<T>): Generator<T> =>
-    new Proxy(g, {
+  <T>(values: Iterator<T>): Generator<T> =>
+    new Proxy(values, {
       get(target, key) {
         return key === Symbol.iterator ?
           () => this :

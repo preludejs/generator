@@ -1,6 +1,6 @@
 const reduce =
-  <T, U>(f: (result: U, value: T, index: number) => U, initialResult: U) =>
-    (g: Iterable<T>): U =>
-      Array.from(g).reduce(f, initialResult)
+  <T, U>(reduction: (result: U, value: T, index: number) => U, initial: U) =>
+    (values: Iterable<T>): U =>
+      Array.from(values).reduce(reduction, initial)
 
 export default reduce

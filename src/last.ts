@@ -1,15 +1,15 @@
 const last =
-  <T>(g: Iterable<T>): T => {
-    let last_: undefined | T = undefined
+  <T>(values: Iterable<T>): T => {
+    let result: undefined | T = undefined
     let found = false
-    for (const value of g) {
-      last_ = value
+    for (const value of values) {
+      result = value
       found = true
     }
     if (!found) {
       throw new Error('Not found.')
     }
-    return last_ as T
+    return result as T
   }
 
 export default last

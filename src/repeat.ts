@@ -1,5 +1,5 @@
 /**
- * Repeats `value` returned from `f` function `n` times.
+ * @yields n values produced using provided function.
  *
  * @example
  *   repeat(3, () => 'yes')
@@ -8,9 +8,9 @@
  *   repeat(5, Math.random)
  */
 const repeat =
-  function* <T>(n: number, f: () => T): Generator<T> {
+  function* <T>(n: number, produce: () => T): Generator<T> {
     for (let i = 0; i < n; i++) {
-      yield f()
+      yield produce()
     }
   }
 

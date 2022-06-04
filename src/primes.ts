@@ -1,6 +1,6 @@
 import memoized from './memoized.js'
 
-const primes_ =
+const aux =
   function* () {
     const map = new Map<number, number>()
     let a = 2
@@ -22,6 +22,6 @@ const primes_ =
   }
 
 const primes =
-  memoized(primes_())
+  memoized(aux())
 
 export default primes

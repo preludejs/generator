@@ -2,7 +2,7 @@ import array from './array.js'
 
 const joinStrings =
   (separator: string) =>
-    (g: Iterable<string>): string =>
-      array(g).join(separator)
+    (values: Iterable<string>): string =>
+      array(values).join(separator)
 
 export default joinStrings

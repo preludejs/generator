@@ -1,16 +1,10 @@
 import type * as Cmp from '@prelude/cmp'
 
+/** @yields sorted values. */
 const sort =
   <T>(cmp: Cmp.t<T>) =>
-    function* (g: Iterable<T>): Generator<T> {
-      const values = [] as T[]
-      for (const value of g) {
-        values.push(value)
-      }
-      values.sort(cmp)
-      for (const value of values) {
-        yield value
-      }
+    function* (values: Iterable<T>) {
+      yield* [ ...values ].sort(cmp)
     }
 
 export default sort

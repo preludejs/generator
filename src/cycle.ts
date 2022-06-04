@@ -6,17 +6,17 @@ import of from './of.js'
  * Empty generator if provided iterable has no elements.
  */
 const cycle =
-  function* <T>(g: Iterable<T>): Generator<T> {
-    const _s: T[] = []
-    for (const _ of g) {
-      _s.push(_)
-      yield _
+  function* <T>(values: Iterable<T>): Generator<T> {
+    const seen: T[] = []
+    for (const value of values) {
+      seen.push(value)
+      yield value
     }
-    if (_s.length === 0) {
+    if (seen.length === 0) {
       return
     }
     while (true) {
-      yield* of(_s)
+      yield* of(seen)
     }
   }
 

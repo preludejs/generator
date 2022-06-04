@@ -1,7 +1,7 @@
 const maybeLast =
-  <T>(g: Iterable<T>): undefined | T => {
+  <T>(values: Iterable<T>): undefined | T => {
     let last: undefined | T = undefined
-    for (const value of g) {
+    for (const value of values) {
       last = value
     }
     return last

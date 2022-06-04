@@ -1,9 +1,10 @@
+/** @yields mapped values. */
 const map =
-  <T, R>(f: (value: T, index: number) => R) =>
-    function* (g: Iterable<T>): Generator<R> {
-      let i = 0
-      for (const _ of g) {
-        yield f(_, i++)
+  <T, R>(mapping: (value: T, index: number) => R) =>
+    function* (values: Iterable<T>): Generator<R> {
+      let index = 0
+      for (const value of values) {
+        yield mapping(value, index++)
       }
     }
 

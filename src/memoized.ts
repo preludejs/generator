@@ -1,19 +1,21 @@
+/** @returns generator function that memoizes its values. */
 const memoized =
-  <T>(g: Iterable<T>) => {
+  <T>(iterable: Iterable<T>) => {
     const values: T[] = []
-    const g_ = g[Symbol.iterator]()
-    const f = function* (): Generator<T> {
-      for (let i = 0; ; i++) {
-        if (i === values.length) {
-          const _ = g_.next()
-          if (_.done) {
-            break
+    const iterator = iterable[Symbol.iterator]()
+    const f =
+      function* (): Generator<T> {
+        for (let index = 0; ; index++) {
+          if (index === values.length) {
+            const result = iterator.next()
+            if (result.done) {
+              break
+            }
+            values.push(result.value)
           }
-          values.push(_.value)
+          yield values[index]
         }
-        yield values[i]
       }
-    }
     f.values = values
     return f
   }

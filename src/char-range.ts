@@ -1,8 +1,8 @@
-/** @yields characters from `first` to `last` inclusive. */
+/** @yields characters from `firstChar` to `lastChar` inclusive. */
 const charRange =
-  function* (first: string, last: string): Generator<string> {
-    const firstCharCode = first.charCodeAt(0)
-    const lastCharCode = last.charCodeAt(0)
+  function* (firstChar: string, lastChar: string): Generator<string> {
+    const firstCharCode = firstChar.charCodeAt(0)
+    const lastCharCode = lastChar.charCodeAt(0)
     for (let charCode = firstCharCode; charCode <= lastCharCode; charCode++) {
       yield String.fromCharCode(charCode)
     }

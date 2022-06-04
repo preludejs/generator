@@ -6,10 +6,10 @@ import type { Defined } from './prelude.js'
  * @see compact
  */
 const defined =
-  function* <T>(g: Iterable<T>): Generator<Defined<T>> {
-    for (const _ of g) {
-      if (typeof _ !== 'undefined') {
-        yield _ as Defined<T>
+  function* <T>(values: Iterable<T>): Generator<Defined<T>> {
+    for (const value of values) {
+      if (typeof value !== 'undefined') {
+        yield value as Defined<T>
       }
     }
   }

@@ -1,10 +1,10 @@
 /** @returns `true` if all elements are passing provided predicate, `false` otherwise. */
 const every =
-  <T>(f: (value: T, index: number) => boolean) =>
-    (g: Iterable<T>): boolean => {
-      let i = 0
-      for (const _ of g) {
-        if (!f(_, i++)) {
+  <T>(predicate: (value: T, index: number) => boolean) =>
+    (values: Iterable<T>): boolean => {
+      let index = 0
+      for (const value of values) {
+        if (!predicate(value, index++)) {
           return false
         }
       }
