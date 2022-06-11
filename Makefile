@@ -1,5 +1,5 @@
 clean:
-	@rm -Rf cjs mjs test/*.js
+	@rm -Rf cjs mjs
 
 build-cjs:
 	@rm -Rf cjs
@@ -14,6 +14,8 @@ build: build-cjs build-mjs
 
 rebuild: clean build
 
+test: export NODE_NO_WARNINGS=1
+test: export NODE_OPTIONS=--experimental-vm-modules
 test: rebuild
 	@npx jest
 

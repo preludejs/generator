@@ -8,7 +8,7 @@ const unsafeCombinations =
       const n = values.length
       const combination: T[] = []
       const aux =
-        function* (from: number, index: number) {
+        function* (from: number, index: number): Generator<T[]> {
           if (index === k_) {
             yield combination
             return

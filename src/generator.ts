@@ -5,7 +5,7 @@ const generator =
       get(target, key) {
         return key === Symbol.iterator ?
           () => this :
-          target[key]
+          target[key as keyof typeof target]
       },
       has(target, key) {
         return key === Symbol.iterator || key in target

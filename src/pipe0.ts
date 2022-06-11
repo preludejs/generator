@@ -30,7 +30,7 @@ type Pipe0 = {
 
 const pipe: Pipe0 =
   (...gs: (Z<unknown, unknown>)[]) =>
-    g =>
+    (g: unknown) =>
       gs.reduce((r, _) => _(r), g)
 
 export default pipe

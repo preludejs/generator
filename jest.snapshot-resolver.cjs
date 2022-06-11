@@ -3,16 +3,16 @@ const resolveSnapshotPath =
   (testPath, snapshotExtension) =>
     testPath
       .replace('.test' + '.js', '.test' + snapshotExtension)
-      .replace('/cjs/', '/src/')
+      .replace('/mjs/', '/src/')
 
 const resolveTestPath =
   (snapshotFilePath, snapshotExtension) =>
     snapshotFilePath
       .replace(snapshotExtension, '.js')
-      .replace('/src/', '/cjs/')
+      .replace('/src/', '/mjs/')
 
 const testPathForConsistencyCheck =
-  './cjs/index.test.js'
+  './mjs/index.test.js'
 
 module.exports = {
   resolveSnapshotPath,

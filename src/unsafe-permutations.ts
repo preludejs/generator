@@ -8,7 +8,7 @@ const unsafePermutations =
       const permutation: T[] = []
       const collected: boolean[] = []
       const aux =
-        function* (j: number) {
+        function* (j: number): Generator<T[]> {
           if (j === k_) {
             yield permutation
             return
