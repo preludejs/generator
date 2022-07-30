@@ -1,9 +1,10 @@
 /** @returns generator from recursively applying function to its result. */
 const recursive =
-  function* <T>(next: (value: T) => T, value: T): Generator<T> {
+  function* <T>(next: (value: T, index: number) => T, value: T): Generator<T> {
+    let index = 1
     while (true) {
       yield value
-      value = next(value) // eslint-disable-line no-param-reassign
+      value = next(value, index++) // eslint-disable-line no-param-reassign
     }
   }
 
