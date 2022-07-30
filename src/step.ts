@@ -2,10 +2,13 @@
 const step =
   <T>(modulo: number) =>
     function* (values: Iterable<T>): Generator<T> {
-      let index = 0
+      let i = 0
       for (const value of values) {
-        if (index++ % modulo === 0) {
+        if (i === 0) {
           yield value
+        }
+        if (++i === modulo) {
+          i = 0
         }
       }
     }
