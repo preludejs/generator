@@ -48,6 +48,7 @@ import product from './product.js'
 import range from './range.js'
 import recursive from './recursive.js'
 import reduce from './reduce.js'
+import reduce1 from './reduce1.js'
 import repeat from './repeat.js'
 import retain from './retain.js'
 import reverse from './reverse.js'
@@ -125,6 +126,7 @@ export {
   range,
   recursive,
   reduce,
+  reduce1,
   repeat,
   retain,
   reverse,
