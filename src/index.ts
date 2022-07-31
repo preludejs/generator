@@ -14,6 +14,7 @@ import count from './count.js'
 import cycle from './cycle.js'
 import defined from './defined.js'
 import every from './every.js'
+import extreme from './extreme.js'
 import fibonacci from './fibonacci.js'
 import filter from './filter.js'
 import find from './find.js'
@@ -90,6 +91,7 @@ export {
   cycle,
   defined,
   every,
+  extreme,
   fibonacci,
   filter,
   find,
