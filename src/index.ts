@@ -13,6 +13,7 @@ import consume from './consume.js'
 import count from './count.js'
 import cycle from './cycle.js'
 import defined from './defined.js'
+import diff from './diff.js'
 import every from './every.js'
 import extreme from './extreme.js'
 import fibonacci from './fibonacci.js'
@@ -91,6 +92,7 @@ export {
   count,
   cycle,
   defined,
+  diff,
   every,
   extreme,
   fibonacci,
