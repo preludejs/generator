@@ -1,3 +1,4 @@
+import append from './append.js'
 import areUnique from './are-unique.js'
 import array from './array.js'
 import batch from './batch.js'
@@ -79,6 +80,7 @@ import zipRecord from './zip-record.js'
 export * from './prelude.js'
 
 export {
+  append,
   areUnique,
   array,
   batch,
