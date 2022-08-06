@@ -40,6 +40,7 @@ import maybeLast from './maybe-last.js'
 import maybeSingle from './maybe-single.js'
 import memoized from './memoized.js'
 import min from './min.js'
+import nth from './nth.js'
 import of from './of.js'
 import pair from './pair.js'
 import permutations from './permutations.js'
@@ -123,6 +124,7 @@ export {
   maybeSingle,
   memoized,
   min,
+  nth,
   of,
   pair,
   permutations,
