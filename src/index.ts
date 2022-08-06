@@ -22,6 +22,7 @@ import find from './find.js'
 import first from './first.js'
 import flatMap from './flat-map.js'
 import flatten from './flatten.js'
+import fork from './fork.js'
 import from_ from './from.js'
 import group from './group.js'
 import groupMap from './group-map.js'
@@ -102,6 +103,7 @@ export {
   first,
   flatMap,
   flatten,
+  fork,
   from_ as from,
   group,
   groupMap,
