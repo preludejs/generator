@@ -46,6 +46,7 @@ import pipe0 from './pipe0.js'
 import primeFactors from './prime-factors.js'
 import primes from './primes.js'
 import product from './product.js'
+import properDivisors from './proper-divisors.js'
 import range from './range.js'
 import recursive from './recursive.js'
 import reduce from './reduce.js'
@@ -125,6 +126,7 @@ export {
   primeFactors,
   primes,
   product,
+  properDivisors,
   range,
   recursive,
   reduce,
