@@ -20,6 +20,7 @@ import extreme from './extreme.js'
 import fibonacci from './fibonacci.js'
 import filter from './filter.js'
 import find from './find.js'
+import findIndex from './find-index.js'
 import first from './first.js'
 import flatMap from './flat-map.js'
 import flatten from './flatten.js'
@@ -104,6 +105,7 @@ export {
   fibonacci,
   filter,
   find,
+  findIndex,
   first,
   flatMap,
   flatten,
