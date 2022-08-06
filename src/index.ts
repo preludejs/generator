@@ -1,6 +1,7 @@
 import append from './append.js'
 import areUnique from './are-unique.js'
 import array from './array.js'
+import at from './at.js'
 import batch from './batch.js'
 import bigproduct from './bigproduct.js'
 import bigsum from './bigsum.js'
@@ -41,7 +42,6 @@ import maybeLast from './maybe-last.js'
 import maybeSingle from './maybe-single.js'
 import memoized from './memoized.js'
 import min from './min.js'
-import nth from './nth.js'
 import of from './of.js'
 import pair from './pair.js'
 import permutations from './permutations.js'
@@ -86,6 +86,7 @@ export {
   append,
   areUnique,
   array,
+  at,
   batch,
   bigproduct,
   bigsum,
@@ -126,7 +127,6 @@ export {
   maybeSingle,
   memoized,
   min,
-  nth,
   of,
   pair,
   permutations,
