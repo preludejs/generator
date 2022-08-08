@@ -28,9 +28,9 @@ type Pipe0 = {
   <A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y>(b: Z<A,B>, c: Z<B,C>, d: Z<C,D>, e: Z<D,E>, f: Z<E,F>, g: Z<F,G>, h: Z<G,H>, i: Z<H,I>, j: Z<I,J>, k: Z<J,K>, l: Z<K,L>, m: Z<L,M>, n: Z<M,N>, o: Z<N,O>, p: Z<O,P>, q: Z<P,Q>, r: Z<Q,R>, s: Z<R,S>, t: Z<S,T>, u: Z<T,U>, v: Z<U,V>, w: Z<V,W>, x: Z<W,X>, y: Z<X,Y>): (a: A) => Y
 }
 
-const pipe: Pipe0 =
+const pipe0: Pipe0 =
   (...gs: (Z<unknown, unknown>)[]) =>
     (g: unknown) =>
       gs.reduce((r, _) => _(r), g)
 
-export default pipe
+export default pipe0

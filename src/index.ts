@@ -65,6 +65,7 @@ import skip from './skip.js'
 import skipWhile from './skip-while.js'
 import some from './some.js'
 import sort from './sort.js'
+import sortedDiff from './sorted-diff.js'
 import step from './step.js'
 import sum from './sum.js'
 import take from './take.js'
@@ -150,6 +151,7 @@ export {
   skipWhile,
   some,
   sort,
+  sortedDiff,
   step,
   sum,
   take,

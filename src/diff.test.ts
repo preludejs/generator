@@ -40,3 +40,26 @@ test('unsorted', () => {
   ])
 
 })
+
+test('lhs, rhs having different type', () => {
+  const xs =
+    [ 2, 6, 4 ]
+  const ys =
+    [ '1', '7', '2', '5' ]
+  const zs =
+    G.pipe(
+      xs,
+      G.diff(ys, Cmp.number, { comparableRhs: parseFloat }),
+      _ => _,
+      G.array,
+    )
+  expect(zs).toEqual([
+    [ undefined, '1' ],
+    [ 2, '2' ],
+    [ 4, undefined ],
+    [ undefined, '5' ],
+    [ 6, undefined ],
+    [ undefined, '7' ]
+  ])
+
+})

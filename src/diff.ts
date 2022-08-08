@@ -1,53 +1,44 @@
 import * as Cmp from '@prelude/cmp'
+import pipe from './pipe.js'
 import pipe0 from './pipe0.js'
 import sort from './sort.js'
-
-const aux =
-  <T>(rhsValues: Iterable<T>, cmp: Cmp.t<T>, direction = Cmp.asc) =>
-    function* (lhsValues: Iterable<T>): Generator<[lhs: undefined | T, rhs: undefined | T]> {
-      const lhsIterator = lhsValues[Symbol.iterator]()
-      const rhsIterator = rhsValues[Symbol.iterator]()
-      let lhsValue = lhsIterator.next()
-      let rhsValue = rhsIterator.next()
-      while (!lhsValue.done && !rhsValue.done) {
-        switch (cmp(lhsValue.value, rhsValue.value)) {
-          case Cmp.eq:
-            yield [lhsValue.value, rhsValue.value]
-            lhsValue = lhsIterator.next()
-            rhsValue = rhsIterator.next()
-            break
-          case direction:
-            yield [lhsValue.value, undefined]
-            lhsValue = lhsIterator.next()
-            break
-          default:
-            yield [undefined, rhsValue.value]
-            rhsValue = rhsIterator.next()
-        }
-      }
-      while (!lhsValue.done) {
-        yield [lhsValue.value, undefined]
-        lhsValue = lhsIterator.next()
-      }
-      while (!rhsValue.done) {
-        yield [undefined, rhsValue.value]
-        rhsValue = rhsIterator.next()
-      }
-    }
+import sortedDiff from './sorted-diff.js'
 
 const diff =
-  <T>(rhsValues: Iterable<T>, cmp: Cmp.t<T>, {
+  <Lhs, Rhs, Comparable = Lhs & Rhs>(rhsValues: Iterable<Rhs>, cmp: Cmp.t<Comparable>, {
+    comparableLhs = (lhs: Lhs) => lhs as unknown as Comparable,
+    comparableRhs = (rhs: Rhs) => rhs as unknown as Comparable,
     sortLhs = true,
     sortRhs = true,
     direction = Cmp.asc
-  } = {}): (values: Iterable<T>) => Generator<[lhs: undefined | T, rhs: undefined | T]> => {
-    const sort_ = sort(direction === Cmp.asc ? cmp : Cmp.reversed(cmp))
+  }: {
+    comparableLhs?: (lhs: Lhs) => Comparable,
+    comparableRhs?: (rhs: Rhs) => Comparable,
+    sortLhs?: boolean,
+    sortRhs?: boolean,
+    direction?: Cmp.R
+  } = {}): (lhsValues: Iterable<Lhs>) => Generator<[lhs: undefined | Lhs, rhs: undefined | Rhs]> => {
+    const directionCmp =
+      direction === Cmp.asc ?
+        cmp :
+        Cmp.reversed(cmp)
     if (sortRhs) {
-      return diff(sort_(rhsValues), cmp, { sortLhs, sortRhs: false, direction })
+      const rhsCmp =
+        (a: Rhs, b: Rhs) =>
+          directionCmp(comparableRhs(a), comparableRhs(b))
+      const rhsValues_ =
+        pipe(
+          rhsValues,
+          sort(rhsCmp)
+        )
+      return diff(rhsValues_, cmp, { sortLhs, sortRhs: false, direction })
     }
     if (sortLhs) {
+      const lhsCmp =
+        (a: Lhs, b: Lhs) =>
+          directionCmp(comparableLhs(a), comparableLhs(b))
       return pipe0(
-        sort_,
+        sort(lhsCmp),
         diff(rhsValues, cmp, {
           sortLhs: false,
           sortRhs,
@@ -55,7 +46,7 @@ const diff =
         })
       )
     }
-    return aux(rhsValues, cmp, direction)
+    return sortedDiff(rhsValues, (a, b) => cmp(comparableLhs(a), comparableRhs(b)), direction)
   }
 
 export default diff

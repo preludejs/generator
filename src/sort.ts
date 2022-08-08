@@ -2,9 +2,9 @@ import type * as Cmp from '@prelude/cmp'
 
 /** @yields sorted values. */
 const sort =
-  <T>(cmp: Cmp.t<T>) =>
+  <T, U extends T = T>(cmp: Cmp.t<U>) =>
     function* (values: Iterable<T>) {
-      yield* [ ...values ].sort(cmp)
+      yield* [ ...values ].sort((a, b) => cmp(a as U, b as U))
     }
 
 export default sort
