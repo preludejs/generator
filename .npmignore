@@ -1,7 +1,7 @@
 .github
 .vscode
 *.test.*
-jest.config.json
+jest.*
 jest.snapshot-resolver.cjs
 Makefile
 wip
