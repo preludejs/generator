@@ -53,6 +53,7 @@ import primes from './primes.js'
 import product from './product.js'
 import properDivisors from './proper-divisors.js'
 import range from './range.js'
+import record from './record.js'
 import recursive from './recursive.js'
 import reduce from './reduce.js'
 import reduce1 from './reduce1.js'
@@ -139,6 +140,7 @@ export {
   product,
   properDivisors,
   range,
+  record,
   recursive,
   reduce,
   reduce1,
