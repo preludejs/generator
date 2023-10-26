@@ -17,6 +17,7 @@ import cycle from './cycle.js'
 import defined from './defined.js'
 import diff from './diff.js'
 import every from './every.js'
+import extend from './extend.js'
 import extreme from './extreme.js'
 import fibonacci from './fibonacci.js'
 import filter from './filter.js'
@@ -104,6 +105,7 @@ export {
   defined,
   diff,
   every,
+  extend,
   extreme,
   fibonacci,
   filter,
