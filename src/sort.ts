@@ -4,7 +4,7 @@ import type * as Cmp from '@prelude/cmp'
 const sort =
   <T, U extends T = T>(cmp: Cmp.t<U>) =>
     function* (values: Iterable<T>) {
-      yield* [ ...values ].sort((a, b) => cmp(a as U, b as U))
+      yield* Array.from(values).sort((a, b) => cmp(a as U, b as U))
     }
 
 export default sort
