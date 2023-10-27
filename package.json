@@ -23,9 +23,8 @@
   },
   "scripts": {
     "test": "make test",
-    "preversion": "make test",
-    "postversion": "make postversion",
-    "ts-node": "node --no-warnings --loader ts-node/esm"
+    "preversion": "make preversion",
+    "postversion": "make postversion"
   },
   "keywords": [
     "prelude",
