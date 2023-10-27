@@ -1,6 +1,6 @@
 {
   "name": "@prelude/generator",
-  "version": "8.0.0",
+  "version": "8.0.1",
   "description": "Generator module.",
   "type": "module",
   "module": "./mjs/index.js",
