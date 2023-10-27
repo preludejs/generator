@@ -13,4 +13,14 @@ test('interleave', () => {
     3, 'd', 'D',
     4, 'e', 'E'
   ])
+  expect(G.pipe(
+    G.interleave(
+      G.cycle([ 'A', 'B' ]),
+      G.cycle([ 3, 5, 7 ])
+    ),
+    G.take(6),
+    G.array
+  )).toEqual([
+    'A', 3, 'B', 5, 'A', 7
+  ])
 })
