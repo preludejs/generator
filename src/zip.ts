@@ -1,13 +1,17 @@
-import type { Generated } from './prelude.js'
+import type { Value } from './prelude.js'
 
 const zip =
-  function* <Gs extends Generator<unknown>[]>(...valuesArray: Gs): Generator<{ [K in keyof Gs]: Generated<Gs[K]> }> {
+  function* <Args extends Iterable<unknown>[]>(...iterables: Args): Generator<{ [K in keyof Args]: Value<Args[K]> }> {
+    const iterators = iterables.map(_ => _[Symbol.iterator]())
     while (true) {
-      const results = valuesArray.map(values => values.next())
-      if (results.some(result => result.done)) {
+      const results = iterators.map(_ => _.next())
+      if (results.some(_ => _.done)) {
         break
       }
-      yield results.map(result => result.value) as { [K in keyof Gs]: Generated<Gs[K]> }
+      yield results.map(_ => _.value) as { [K in keyof Args]: Value<Args[K]> }
+    }
+    for (const iterator of iterators) {
+      iterator.return?.()
     }
   }
 
