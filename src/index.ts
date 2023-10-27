@@ -32,7 +32,6 @@ import group from './group.js'
 import groupMap from './group-map.js'
 import groupObject from './group-object.js'
 import interleave from './interleave.js'
-import iterator from './iterator.js'
 import joinStrings from './join-strings.js'
 import last from './last.js'
 import length from './length.js'
@@ -120,7 +119,6 @@ export {
   groupMap,
   groupObject,
   interleave,
-  iterator,
   joinStrings,
   last,
   length,
