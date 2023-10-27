@@ -1,0 +1,50 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`prime factors of 0 1`] = `Array []`;
+
+exports[`prime factors of 42 1`] = `
+Array [
+  Array [
+    2,
+    1,
+  ],
+  Array [
+    3,
+    1,
+  ],
+  Array [
+    7,
+    1,
+  ],
+]
+`;
+
+exports[`prime factors of 100 1`] = `
+Array [
+  Array [
+    2,
+    2,
+  ],
+  Array [
+    5,
+    2,
+  ],
+]
+`;
+
+exports[`prime factors of 9007199254740991 1`] = `
+Array [
+  Array [
+    6361,
+    1,
+  ],
+  Array [
+    69431,
+    1,
+  ],
+  Array [
+    20394401,
+    1,
+  ],
+]
+`;
