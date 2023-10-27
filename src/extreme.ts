@@ -19,6 +19,7 @@ const extreme =
           result.min = next.value
         }
       }
+      iterator.return?.()
       return result
     }
 
