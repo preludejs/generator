@@ -38,6 +38,7 @@ import length from './length.js'
 import map from './map.js'
 import max from './max.js'
 import maybeFind from './maybe-find.js'
+import maybeFirst from './maybe-first.js'
 import maybeLast from './maybe-last.js'
 import maybeSingle from './maybe-single.js'
 import memoized from './memoized.js'
@@ -125,6 +126,7 @@ export {
   map,
   max,
   maybeFind,
+  maybeFirst,
   maybeLast,
   maybeSingle,
   memoized,
