@@ -1,3 +1,17 @@
+[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=preludejs_generator&metric=sqale_rating)](https://sonarcloud.io/summary/new_code?id=preludejs_generator)
+[![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=preludejs_generator&metric=security_rating)](https://sonarcloud.io/summary/new_code?id=preludejs_generator)
+[![Bugs](https://sonarcloud.io/api/project_badges/measure?project=preludejs_generator&metric=bugs)](https://sonarcloud.io/summary/new_code?id=preludejs_generator)
+[![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=preludejs_generator&metric=vulnerabilities)](https://sonarcloud.io/summary/new_code?id=preludejs_generator)
+[![Duplicated Lines (%)](https://sonarcloud.io/api/project_badges/measure?project=preludejs_generator&metric=duplicated_lines_density)](https://sonarcloud.io/summary/new_code?id=preludejs_generator)
+[![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=preludejs_generator&metric=reliability_rating)](https://sonarcloud.io/summary/new_code?id=preludejs_generator)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=preludejs_generator&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=preludejs_generator)
+[![Technical Debt](https://sonarcloud.io/api/project_badges/measure?project=preludejs_generator&metric=sqale_index)](https://sonarcloud.io/summary/new_code?id=preludejs_generator)
+[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=preludejs_generator&metric=coverage)](https://sonarcloud.io/summary/new_code?id=preludejs_generator)
+[![Lines of Code](https://sonarcloud.io/api/project_badges/measure?project=preludejs_generator&metric=ncloc)](https://sonarcloud.io/summary/new_code?id=preludejs_generator)
+[![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=preludejs_generator&metric=code_smells)](https://sonarcloud.io/summary/new_code?id=preludejs_generator)
+
+---
+
 # Generator module
 
 * `areUnique: <T, U>(g: Iterable<T>, f?: (value: T) => U) => boolean`
