@@ -51,6 +51,6 @@
     "typescript": "5.2.2"
   },
   "dependencies": {
-    "@prelude/cmp": "workspace:*"
+    "@prelude/cmp": "4.1.0"
   }
 }
