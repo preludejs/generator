@@ -1,18 +1,18 @@
-import iterator from './iterator.js'
-
 const pair =
-  <A, B>(rhsValues: Iterable<B>) =>
-    function* (values: Iterable<A>): Generator<[ A, B ]> {
-      const values_ = iterator(values)
-      const rhsValues_ = iterator(rhsValues)
+  <A, B>(rhsIterable: Iterable<B>) =>
+    function* (lhsIterable: Iterable<A>): Generator<[ A, B ]> {
+      const lhsIterator = lhsIterable[Symbol.iterator]()
+      const rhsIterator = rhsIterable[Symbol.iterator]()
       while (true) {
-        const result = values_.next()
-        const rhsResult = rhsValues_.next()
-        if (result.done || rhsResult.done) {
+        const lhsResult = lhsIterator.next()
+        const rhsResult = rhsIterator.next()
+        if (lhsResult.done || rhsResult.done) {
           break
         }
-        yield [ result.value, rhsResult.value ]
+        yield [ lhsResult.value, rhsResult.value ]
       }
+      lhsIterator.return?.()
+      rhsIterator.return?.()
     }
 
 export default pair
