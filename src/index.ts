@@ -8,7 +8,6 @@ import bigsum from './bigsum.js'
 import cartesianProduct from './cartesian-product.js'
 import charRange from './char-range.js'
 import combinations from './combinations.js'
-import combine from './combine.js'
 import compact from './compact.js'
 import composites from './composites.js'
 import concat from './concat.js'
@@ -97,7 +96,6 @@ export {
   cartesianProduct,
   charRange,
   combinations,
-  combine,
   compact,
   composites,
   concat,
