@@ -5,7 +5,12 @@ const groupedRecord =
       const record = {} as Record<K, undefined | (T[])>
       for (const value of values) {
         const key = keyOfValue(value)
-        ;(record[key] ??= []).push(value)
+        const recordValues = record[key]
+        if (recordValues) {
+          recordValues.push(value)
+        } else {
+          record[key] = [ value ]
+        }
       }
       return record
     }
