@@ -2,12 +2,12 @@
 const groupedRecord =
   <T, K extends number | string | symbol>(keyOfValue: (value: T) => K) =>
     (values: Iterable<T>) => {
-      const map = {} as Record<K, undefined | (T[])>
+      const record = {} as Record<K, undefined | (T[])>
       for (const value of values) {
-        const key = keyOfValue(value);
-        (map[key] = map[key] ?? [] as T[]).push(value)
+        const key = keyOfValue(value)
+        ;(record[key] ??= []).push(value)
       }
-      return map
+      return record
     }
 
 export default groupedRecord
