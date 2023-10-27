@@ -7,7 +7,7 @@ test('fork, union', () => {
       G.map((_: number) => _ * 2),
       G.map((_: number) => String(_ * 3))
     ),
-    G.concat,
+    G.flatten,
     G.array
   )).toEqual([
     2, 4, 6, 8, 10,
