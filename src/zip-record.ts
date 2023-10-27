@@ -1,14 +1,18 @@
-import type { Generated } from './prelude.js'
+import type { Value } from './prelude.js'
 
 const zipRecord =
-  function* <Gs extends { [key: string]: Generator<unknown> }>(gs: Gs): Generator<{ [K in keyof Gs]: Generated<Gs[K]> }> {
-    const keys = Object.keys(gs)
+  function* <Arg extends { [key: string]: Iterable<unknown> }>(iterables: Arg): Generator<{ [K in keyof Arg]: Value<Arg[K]> }> {
+    const keys = Object.keys(iterables)
+    const iterators = keys.map(_ => iterables[_][Symbol.iterator]())
     while (true) {
-      const results = keys.map(key => gs[key].next())
+      const results = iterators.map(_ => _.next())
       if (results.some(_ => _.done)) {
         break
       }
-      yield Object.fromEntries(keys.map((_, i) => [ _, results[i].value ])) as { [K in keyof Gs]: Generated<Gs[K]> }
+      yield Object.fromEntries(keys.map((_, i) => [ _, results[i].value ])) as { [K in keyof Arg]: Value<Arg[K]> }
+    }
+    for (const iterator of iterators) {
+      iterator.return?.()
     }
   }
 
