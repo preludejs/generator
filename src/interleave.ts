@@ -1,15 +1,19 @@
-import type { Generated } from './prelude.js'
+import type { Value } from './prelude.js'
 
 const interleave =
-  function* <Gs extends Generator<unknown>[]>(...valuesArray: Gs): Generator<Generated<Gs[number]>> {
+  function* <Args extends Iterable<unknown>[]>(...iterables: Args): Generator<Value<Args[number]>> {
+    const iterators = iterables.map(_ => _[Symbol.iterator]())
     while (true) {
-      const results = valuesArray.map(_ => _.next())
+      const results = iterators.map(_ => _.next())
       if (results.some(_ => _.done)) {
         break
       }
       for (const result of results) {
         yield result.value
       }
+    }
+    for (const iterator of iterators) {
+      iterator.return?.()
     }
   }
 
