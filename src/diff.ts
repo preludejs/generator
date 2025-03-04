@@ -4,7 +4,34 @@ import pipe0 from './pipe0.js'
 import sort from './sort.js'
 import sortedDiff from './sorted-diff.js'
 
-const diff =
+/**
+ * Creates a generator that produces pairs showing differences between two iterables.
+ *
+ * @template Lhs - Type of elements in the left-hand side iterable
+ * @template Rhs - Type of elements in the right-hand side iterable
+ * @template Comparable - Type used for comparison, defaults to intersection of Lhs & Rhs
+ *
+ * @param rhsValues - The right-hand side iterable to compare against
+ * @param cmp - Comparison function to determine element equality and order
+ * @param options - Configuration options
+ * @param options.comparableLhs - Function to convert left values to comparable type
+ * @param options.comparableRhs - Function to convert right values to comparable type
+ * @param options.sortLhs - Whether to sort the left-hand side values
+ * @param options.sortRhs - Whether to sort the right-hand side values
+ * @param options.direction - Comparison direction (ascending or descending)
+ *
+ * @returns A function that takes an iterable and yields pairs of differences
+ * @yields Pairs [lhs, rhs] where:
+ *   - [value, undefined] indicates an element in lhs but not in rhs
+ *   - [undefined, value] indicates an element in rhs but not in lhs
+ *   - [lhsValue, rhsValue] indicates differing elements
+ *
+ * @example
+ * // Compare two arrays
+ * const differences = [...diff([4, 5, 6], Cmp.primitive)([1, 2, 3])]
+ * // Result: [[1, undefined], [2, undefined], [3, undefined], [undefined, 4], [undefined, 5], [undefined, 6]]
+ */
+export const diff =
   <Lhs, Rhs, Comparable = Lhs & Rhs>(rhsValues: Iterable<Rhs>, cmp: Cmp.t<Comparable>, {
     comparableLhs = (lhs: Lhs) => lhs as unknown as Comparable,
     comparableRhs = (rhs: Rhs) => rhs as unknown as Comparable,

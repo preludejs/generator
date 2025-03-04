@@ -1,173 +1,87 @@
-import append from './append.js'
-import areUnique from './are-unique.js'
-import array from './array.js'
-import at from './at.js'
-import batch from './batch.js'
-import bigproduct from './bigproduct.js'
-import bigsum from './bigsum.js'
-import cartesianProduct from './cartesian-product.js'
-import charRange from './char-range.js'
-import combinations from './combinations.js'
-import compact from './compact.js'
-import composites from './composites.js'
-import concat from './concat.js'
-import consume from './consume.js'
-import count from './count.js'
-import cycle from './cycle.js'
-import defined from './defined.js'
-import diff from './diff.js'
-import every from './every.js'
-import extend from './extend.js'
-import extreme from './extreme.js'
-import fibonacci from './fibonacci.js'
-import filter from './filter.js'
-import find from './find.js'
-import findIndex from './find-index.js'
-import first from './first.js'
-import flatMap from './flat-map.js'
-import flatten from './flatten.js'
-import fork from './fork.js'
-import from_ from './from.js'
-import group from './group.js'
-import groupMap from './group-map.js'
-import groupObject from './group-object.js'
-import interleave from './interleave.js'
-import joinStrings from './join-strings.js'
-import last from './last.js'
-import length from './length.js'
-import map from './map.js'
-import max from './max.js'
-import maybeFind from './maybe-find.js'
-import maybeFirst from './maybe-first.js'
-import maybeLast from './maybe-last.js'
-import maybeSingle from './maybe-single.js'
-import memoized from './memoized.js'
-import min from './min.js'
-import of from './of.js'
-import pair from './pair.js'
-import permutations from './permutations.js'
-import pipe from './pipe.js'
-import pipe0 from './pipe0.js'
-import prepend from './prepend.js'
-import primeFactors from './prime-factors.js'
-import primes from './primes.js'
-import product from './product.js'
-import properDivisors from './proper-divisors.js'
-import range from './range.js'
-import record from './record.js'
-import recursive from './recursive.js'
-import reduce from './reduce.js'
-import reduce1 from './reduce1.js'
-import repeat from './repeat.js'
-import retain from './retain.js'
-import reverse from './reverse.js'
-import rotate from './rotate.js'
-import single from './single.js'
-import skip from './skip.js'
-import skipWhile from './skip-while.js'
-import some from './some.js'
-import sort from './sort.js'
-import sortedDiff from './sorted-diff.js'
-import step from './step.js'
-import sum from './sum.js'
-import take from './take.js'
-import tap from './tap.js'
-import unique from './unique.js'
-import unsafeCombinations from './unsafe-combinations.js'
-import unsafePermutations from './unsafe-permutations.js'
-import until from './until.js'
-import while_ from './while.js'
-import window_ from './window.js'
-import withIndex from './with-index.js'
-import yield_ from './yield.js'
-import zip from './zip.js'
-import zipRecord from './zip-record.js'
-
+export * from './append.js'
+export * from './are-unique.js'
+export * from './array.js'
+export * from './at.js'
+export * from './batch.js'
+export * from './bigproduct.js'
+export * from './bigsum.js'
+export * from './cartesian-product.js'
+export * from './char-range.js'
+export * from './combinations.js'
+export * from './compact.js'
+export * from './composites.js'
+export * from './concat.js'
+export * from './consume.js'
+export * from './count.js'
+export * from './cycle.js'
+export * from './defined.js'
+export * from './diff.js'
+export * from './every.js'
+export * from './extend.js'
+export * from './extreme.js'
+export * from './fibonacci.js'
+export * from './filter.js'
+export * from './find-index.js'
+export * from './find.js'
+export * from './first.js'
+export * from './flat-map.js'
+export * from './flatten.js'
+export * from './fork.js'
+export * from './from.js'
+export * from './generator.js'
+export * from './group-map.js'
+export * from './group-object.js'
+export * from './group.js'
+export * from './interleave.js'
+export * from './join-strings.js'
+export * from './last.js'
+export * from './length.js'
+export * from './lift.js'
+export * from './map.js'
+export * from './max.js'
+export * from './maybe-find.js'
+export * from './maybe-first.js'
+export * from './maybe-last.js'
+export * from './maybe-single.js'
+export * from './memoized.js'
+export * from './min.js'
+export * from './of.js'
+export * from './pair.js'
+export * from './permutations.js'
+export * from './pipe.js'
+export * from './pipe0.js'
 export * from './prelude.js'
-
-export {
-  append,
-  areUnique,
-  array,
-  at,
-  batch,
-  bigproduct,
-  bigsum,
-  cartesianProduct,
-  charRange,
-  combinations,
-  compact,
-  composites,
-  concat,
-  consume,
-  count,
-  cycle,
-  defined,
-  diff,
-  every,
-  extend,
-  extreme,
-  fibonacci,
-  filter,
-  find,
-  findIndex,
-  first,
-  flatMap,
-  flatten,
-  fork,
-  from_ as from,
-  group,
-  groupMap,
-  groupObject,
-  interleave,
-  joinStrings,
-  last,
-  length,
-  map,
-  max,
-  maybeFind,
-  maybeFirst,
-  maybeLast,
-  maybeSingle,
-  memoized,
-  min,
-  of,
-  pair,
-  permutations,
-  pipe,
-  pipe0,
-  prepend,
-  primeFactors,
-  primes,
-  product,
-  properDivisors,
-  range,
-  record,
-  recursive,
-  reduce,
-  reduce1,
-  repeat,
-  retain,
-  reverse,
-  rotate,
-  single,
-  skip,
-  skipWhile,
-  some,
-  sort,
-  sortedDiff,
-  step,
-  sum,
-  take,
-  tap,
-  unique,
-  unsafeCombinations,
-  unsafePermutations,
-  until,
-  while_ as while,
-  window_ as window,
-  withIndex,
-  yield_ as yield,
-  zip,
-  zipRecord
-}
+export * from './prepend.js'
+export * from './prime-factors.js'
+export * from './primes.js'
+export * from './product.js'
+export * from './proper-divisors.js'
+export * from './range.js'
+export * from './record.js'
+export * from './recursive.js'
+export * from './reduce.js'
+export * from './reduce1.js'
+export * from './repeat.js'
+export * from './retain.js'
+export * from './reverse.js'
+export * from './rotate.js'
+export * from './single.js'
+export * from './skip-while.js'
+export * from './skip.js'
+export * from './some.js'
+export * from './sort.js'
+export * from './sorted-diff.js'
+export * from './step.js'
+export * from './sum.js'
+export * from './take.js'
+export * from './tap.js'
+export * from './unique.js'
+export * from './unsafe-combinations.js'
+export * from './unsafe-permutations.js'
+export * from './until.js'
+export * from './while.js'
+export * from './window.js'
+export * from './with-index.js'
+export * from './yield.js'
+export * from './zip-record.js'
+export * from './zip.js'

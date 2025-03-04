@@ -1,5 +1,5 @@
 /** @returns a map-like object of grouped values. */
-const groupedRecord =
+export const groupObject =
   <T, K extends number | string | symbol>(keyOfValue: (value: T) => K) =>
     (values: Iterable<T>) => {
       const record = {} as Record<K, undefined | (T[])>
@@ -15,4 +15,4 @@ const groupedRecord =
       return record
     }
 
-export default groupedRecord
+export default groupObject

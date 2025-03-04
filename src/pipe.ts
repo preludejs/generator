@@ -1,6 +1,10 @@
+/** Function type for pipe transformations */
 type Z<A, B> = (a: A) => B
 
-type Pipe = {
+/**
+ * Type definition for pipe with various arities
+ */
+export type Pipe = {
   <A>(a: A): A,
   <A,B>(a: A, b: Z<A,B>): B,
   <A,B,C>(a: A, b: Z<A,B>, c: Z<B,C>): C,
@@ -28,7 +32,26 @@ type Pipe = {
   <A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y>(a: A, b: Z<A,B>, c: Z<B,C>, d: Z<C,D>, e: Z<D,E>, f: Z<E,F>, g: Z<F,G>, h: Z<G,H>, i: Z<H,I>, j: Z<I,J>, k: Z<J,K>, l: Z<K,L>, m: Z<L,M>, n: Z<M,N>, o: Z<N,O>, p: Z<O,P>, q: Z<P,Q>, r: Z<Q,R>, s: Z<R,S>, t: Z<S,T>, u: Z<T,U>, v: Z<U,V>, w: Z<V,W>, x: Z<W,X>, y: Z<X,Y>): Y
 }
 
-const pipe: Pipe =
+/**
+ * Passes a value through a series of transformations.
+ * Unlike `pipe0`, this immediately executes the pipe with the initial value.
+ *
+ * @template A Initial input type
+ * @template B,C,D... Intermediate and final types in the transformation chain
+ * @param g The initial value
+ * @param gs A sequence of transformation functions
+ * @returns The result of applying all transformations to the initial value
+ *
+ * @example
+ * ```ts
+ * G.pipe(
+ *   5,
+ *   (n: number) => n + 2,
+ *   (n: number) => n * 3
+ * ) // (5 + 2) * 3 = 21
+ * ```
+ */
+export const pipe: Pipe =
   (g: unknown, ...gs: (Z<unknown, unknown>)[]): unknown =>
     gs.reduce((r, _) => _(r), g)
 

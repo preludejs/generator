@@ -7,7 +7,7 @@
  * @example
  *   repeat(5, Math.random)
  */
-const repeat =
+export const repeat =
   function* <T>(n: number, produce: () => T): Generator<T> {
     for (let i = 0; i < n; i++) {
       yield produce()

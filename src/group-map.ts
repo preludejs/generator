@@ -1,5 +1,5 @@
 /** @returns a {@link Map} of grouped values. */
-const groupMap =
+export const groupMap =
   <T, K>(keyOfValue: (value: T) => K) =>
     (values: Iterable<T>) => {
       const map = new Map<K, T[]>()

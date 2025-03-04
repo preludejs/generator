@@ -1,6 +1,21 @@
 import primeFactors from './prime-factors.js'
 
-const properDivisors =
+/**
+ * Generates all proper divisors of a number (divisors that are less than n).
+ * A proper divisor of n is any positive integer that divides n evenly, except for n itself.
+ *
+ * @param n - The number to find proper divisors for
+ * @yields Each proper divisor of n in ascending order
+ *
+ * @example
+ * ```ts
+ * G.pipe(
+ *   G.properDivisors(12),
+ *   G.array
+ * ) // [1, 2, 3, 4, 6]
+ * ```
+ */
+export const properDivisors =
   function* (n: number) {
     if (n <= 1) {
       return

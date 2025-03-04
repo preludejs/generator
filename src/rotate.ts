@@ -4,6 +4,13 @@ import pipe from './pipe.js'
 import retain from './retain.js'
 import take from './take.js'
 
+/**
+ * Helper function to rotate values backward by n positions
+ *
+ * @template T - Element type
+ * @param n - Number of positions to rotate backward
+ * @yields Elements from the input iterable rotated backward by n positions
+ */
 const rotateBackward =
   <T>(n: number) =>
     function* (g: Iterable<T>): Generator<T> {
@@ -15,6 +22,13 @@ const rotateBackward =
       }
     }
 
+/**
+ * Helper function to rotate values forward by n positions
+ *
+ * @template T - Element type
+ * @param n - Number of positions to rotate forward
+ * @yields Elements from the input iterable rotated forward by n positions
+ */
 const rotateForward =
   <T>(n: number) =>
     function* (g: Iterable<T>): Generator<T> {
@@ -31,7 +45,25 @@ const rotateForward =
       }
     }
 
-const rotate =
+/**
+ * Creates a generator that rotates elements in an iterable by n positions.
+ * Positive values rotate forward, negative values rotate backward.
+ *
+ * @template T - Element type
+ * @param n - Number of positions to rotate (positive for forward, negative for backward)
+ * @throws {TypeError} If n is not a safe integer
+ * @yields Elements from the input iterable rotated by n positions
+ *
+ * @example
+ * ```ts
+ * G.pipe(
+ *   G.range(1, 5),
+ *   G.rotate(2),
+ *   G.array
+ * ) // [4, 5, 1, 2, 3]
+ * ```
+ */
+export const rotate =
   <T>(n: number) => {
     if (!Number.isSafeInteger(n)) {
       throw new TypeError(`Expected rotate to be a safe integer, got ${n}.`)

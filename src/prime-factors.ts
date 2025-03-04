@@ -1,7 +1,22 @@
 import primes from './primes.js'
 
-/** @yields naïve prime factors with exponents. */
-const primeFactors =
+/**
+ * Generates prime factorization of a number.
+ * Returns pairs of [prime, exponent] representing factors in the form prime^exponent.
+ *
+ * @param value - The number to factorize
+ * @yields Pairs of [prime, exponent] representing prime factors
+ * @returns Empty array for invalid inputs (non-positive or non-integer values)
+ *
+ * @example
+ * ```ts
+ * G.pipe(
+ *   G.primeFactors(60),
+ *   G.array
+ * ) // [[2, 2], [3, 1], [5, 1]] (representing 2^2 * 3^1 * 5^1)
+ * ```
+ */
+export const primeFactors =
   function* (value: number): Generator<[prime: number, exponent: number]> {
     if (value <= 0 || !Number.isSafeInteger(value)) {
       return []

@@ -1,10 +1,12 @@
 
 /**
- * @returns `true` if iterable has unique elements, `false` otherwise.
+ * Checks if all elements in the iterable are unique according to their values or a derived key.
  *
- * Optionally mapping function from element to same-value equality key can be provided.
+ * @param values - The iterable to check for uniqueness
+ * @param maybeKeyOfValue - Optional function to extract a key for uniqueness comparison (identity is used if not provided)
+ * @returns `true` if all elements are unique, `false` if duplicates exist
  */
-const areUnique =
+export const areUnique =
   <T, U>(values: Iterable<T>, maybeKeyOfValue?: (value: T) => U): boolean => {
     const set = new Set<unknown>()
     const keyOfValue = maybeKeyOfValue ?? (_ => _)
