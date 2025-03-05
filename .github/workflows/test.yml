@@ -32,8 +32,7 @@ jobs:
 
       - run: make test
 
-      - name: SonarCloud Scan
-        uses: SonarSource/sonarqube-scan-action
+      - name: SonarQube Scan
+        uses: SonarSource/sonarqube-scan-action@v5
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
